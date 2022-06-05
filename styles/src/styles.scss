@@ -1,5 +1,61 @@
+@use "partials/reboot";
+@use "partials/mixins";
 @use "partials/variables";
+
+// TODO:
+// - adjust the size, padding for all elements
 
 :root {
   background-color: variables.$black-1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  max-width: calc(100vw - 3rem);
+  border: 1px solid variables.$gray;
+
+  @include mixins.mq_md {
+    padding: 4rem 2rem;
+    max-width: calc(100vw - 6rem);
+  }
+  @include mixins.mq_lg {
+    padding: 4rem 3rem;
+    max-width: calc(100vw - 10rem);
+  }
+  @include mixins.mq_xl {
+    padding: 4rem 4rem;
+    max-width: calc(100vw - 14rem);
+  }
+}
+
+.logo {
+  height: 3rem;
+  display: inline-block;
+}
+
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .links {
+    display: flex;
+    font-size: 2rem;
+  }
+  .link {
+    position: relative;
+
+    &:hover::after,
+    &-active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 102%;
+      width: 100%;
+      text-decoration: underline;
+      border-bottom: 2px solid variables.$white;
+    }
+  }
 }

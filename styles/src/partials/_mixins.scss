@@ -1,0 +1,22 @@
+@use "variables";
+
+@mixin mq_sm {
+  @media screen and (min-width: variables.$sm) {
+    @content;
+  }
+}
+@mixin mq_md {
+  @media screen and (min-width: variables.$md) and (max-width: variables.$lg) {
+    @content;
+  }
+}
+@mixin mq_lg {
+  @media screen and (min-width: variables.$lg) and (max-width: variables.$xl) {
+    @content;
+  }
+}
+@mixin mq_xl {
+  @media screen and (min-width: variables.$xl) {
+    @content;
+  }
+}

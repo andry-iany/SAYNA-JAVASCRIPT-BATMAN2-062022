@@ -13,3 +13,13 @@ $gray: #c4c4c4;
 // gradient
 $grad-blue: linear-gradient($yellow-3, $blue);
 $grad-red: linear-gradient($yellow-3, $red-2);
+
+// breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1110px;
+
+// width
+$min-width: 390px;
+$max-width: 1020px;
