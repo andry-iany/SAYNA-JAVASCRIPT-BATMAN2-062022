@@ -15,44 +15,113 @@ body {
   color: #ffffff;
 }
 
-:root {
-  background-color: #000;
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .btn-group {
+    flex-direction: row;
+  }
+}
+.btn-translucent {
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgba(237, 222, 191, 0.4), rgba(137, 0, 8, 0.6));
+  padding: 1rem 2rem;
+  display: inline-block;
+  width: 13.125rem;
 }
 
 .container {
+  position: relative;
+  z-index: 10;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 0 1rem;
   max-width: calc(100vw - 3rem);
-  border: 1px solid #c4c4c4;
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
 }
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) {
   .container {
-    padding: 4rem 2rem;
+    padding: 0 2rem;
     max-width: calc(100vw - 6rem);
   }
 }
-@media screen and (min-width: 992px) and (max-width: 1110px) {
+@media screen and (min-width: 992px) {
   .container {
-    padding: 4rem 3rem;
+    padding: 0 3rem;
     max-width: calc(100vw - 10rem);
   }
 }
 @media screen and (min-width: 1110px) {
   .container {
-    padding: 4rem 4rem;
+    padding: 0 4rem;
     max-width: calc(100vw - 14rem);
   }
 }
 
 .logo {
-  height: 3rem;
+  height: 2.5rem;
   display: inline-block;
 }
+@media screen and (min-width: 768px) {
+  .logo {
+    height: 3rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .logo {
+    height: 3.5rem;
+  }
+}
 
-header nav {
+:root {
+  background-color: #0d0e09;
+}
+
+header {
+  background-image: url("/assets/illustrations/Bathome1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+header:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 1;
+  background: linear-gradient(rgba(13, 14, 9, 0), #0d0e09);
+}
+header .nav.container {
+  border-bottom: 3px solid #c4c4c4;
+}
+header .nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  header .nav-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  header .nav-wrapper {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
 }
 header .links {
   display: flex;
@@ -69,4 +138,30 @@ header .link:hover::after, header .link-active::after {
   width: 100%;
   text-decoration: underline;
   border-bottom: 2px solid #ffffff;
+}
+header .banner-wrapper {
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media screen and (min-width: 768px) {
+  header .banner-wrapper {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  header .banner-wrapper {
+    max-width: 60%;
+    padding-top: 10rem;
+    padding-bottom: 14rem;
+  }
+}
+header .banner-description {
+  margin-bottom: 1rem;
+}
+header .banner-title {
+  margin-bottom: 1.3rem;
 }/*# sourceMappingURL=styles.css.map */

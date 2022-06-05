@@ -6,12 +6,12 @@
   }
 }
 @mixin mq_md {
-  @media screen and (min-width: variables.$md) and (max-width: variables.$lg) {
+  @media screen and (min-width: variables.$md) {
     @content;
   }
 }
 @mixin mq_lg {
-  @media screen and (min-width: variables.$lg) and (max-width: variables.$xl) {
+  @media screen and (min-width: variables.$lg) {
     @content;
   }
 }
@@ -19,4 +19,7 @@
   @media screen and (min-width: variables.$xl) {
     @content;
   }
+}
+@mixin border($position: bottom, $color: variables.$gray-1, $width: 1px) {
+  border-#{$position}: $width solid $color;
 }
