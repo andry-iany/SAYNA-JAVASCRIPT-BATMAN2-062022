@@ -95,6 +95,7 @@ body {
 }
 
 :root {
+  scroll-behavior: smooth;
   background-color: #000;
   min-width: 375px;
 }
@@ -238,7 +239,10 @@ aside .icon-aside img {
     padding-left: 4rem;
   }
 }
-.section .arrow-down {
+.section.arrow-down {
+  margin-bottom: 4rem;
+}
+.section.arrow-down img {
   height: 2.2rem;
   margin: 0 auto;
   display: block;
@@ -422,7 +426,7 @@ aside .icon-aside img {
   justify-content: space-evenly;
   align-items: flex-start;
   text-align: center;
-  padding: 7rem 0;
+  padding: 8rem 0;
 }
 .quotes-image {
   width: 4rem;
@@ -451,4 +455,29 @@ aside .icon-aside img {
 }
 .quotes-navigation-btn-active {
   background-color: #19587d;
+}
+
+footer .container {
+  padding-bottom: 8rem;
+}
+footer .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer .networks {
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.icon-small {
+  height: 1.3rem;
+}
+.icon-small img {
+  height: 100%;
+}
+.icon-medium {
+  height: 2.8rem;
 }/*# sourceMappingURL=styles.css.map */

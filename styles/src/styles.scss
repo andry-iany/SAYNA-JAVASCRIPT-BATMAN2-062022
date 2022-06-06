@@ -4,6 +4,7 @@
 
 // TODO:
 // - adjust the size, padding for all elements
+// - make some refactoring to clean up our codes
 
 .btn {
   display: inline-block;
@@ -73,6 +74,7 @@
 }
 
 :root {
+  scroll-behavior: smooth;
   background-color: variables.$black-1;
   min-width: variables.$min-width;
 }
@@ -208,10 +210,14 @@ aside {
     }
   }
 
-  .arrow-down {
-    height: 2.2rem;
-    margin: 0 auto;
-    display: block;
+  &.arrow-down {
+    margin-bottom: 4rem;
+
+    img {
+      height: 2.2rem;
+      margin: 0 auto;
+      display: block;
+    }
   }
 
   &-title {
@@ -366,7 +372,7 @@ aside {
 .quotes {
   @include mixins.flex($justify-content: space-evenly, $align-items: flex-start);
   text-align: center;
-  padding: 7rem 0;
+  padding: 8rem 0;
 
   &-image {
     width: 4rem;
@@ -400,5 +406,32 @@ aside {
     &-active {
       background-color: variables.$blue;
     }
+  }
+}
+
+footer {
+  .container {
+    padding-bottom: 8rem;
+  }
+
+  .flex {
+    @include mixins.flex();
+    gap: 0.5rem;
+  }
+  .networks {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+.icon {
+  &-small {
+    height: 1.3rem;
+    img {
+      height: 100%;
+    }
+  }
+  &-medium {
+    height: 2.8rem;
   }
 }
