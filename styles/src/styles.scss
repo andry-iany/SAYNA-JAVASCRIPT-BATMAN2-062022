@@ -29,22 +29,22 @@
   position: relative;
   z-index: 10;
   margin: 0 auto;
-  padding: 0 1rem;
-  max-width: calc(100vw - 3rem);
+  padding: 0 2rem;
+  max-width: calc(100vw - 4rem);
 
   @include mixins.border(left);
   @include mixins.border(right);
 
   @include mixins.mq_md {
-    padding: 0 2rem;
+    padding: 0 3rem;
     max-width: calc(100vw - 6rem);
   }
   @include mixins.mq_lg {
-    padding: 0 3rem;
+    padding: 0 4rem;
     max-width: calc(100vw - 10rem);
   }
   @include mixins.mq_xl {
-    padding: 0 4rem;
+    padding: 0 4.5rem;
     max-width: calc(100vw - 14rem);
   }
 }
@@ -62,7 +62,7 @@
 }
 
 :root {
-  background-color: variables.$black-2;
+  background-color: variables.$black-1;
 }
 
 header {
@@ -72,7 +72,7 @@ header {
   background-position: top center;
   position: relative;
 
-  &:after {
+  &::after {
     content: "";
     @include mixins.p_absolute($y_axis: bottom, $height: 4rem);
     background: variables.$grad-black;
@@ -81,7 +81,7 @@ header {
 
   .nav {
     &.container {
-      @include mixins.border($position: bottom, $width: 3px);
+      @include mixins.border($position: bottom, $width: 0.25rem);
     }
 
     &-wrapper {
@@ -160,7 +160,7 @@ aside {
     @include mixins.flex($direction: column);
     @include mixins.p_absolute($x_axis: right, $x_value: 0, $width: auto);
     transform: translate(50%, -50%);
-    gap: 12px;
+    gap: 1.5rem;
   }
 
   .icon-aside {
@@ -177,5 +177,63 @@ aside {
       display: inline;
       width: 100%;
     }
+  }
+}
+
+.section {
+  @include mixins.mq_md {
+    &-left {
+      .section-title,
+      .section-text {
+        padding-right: 4rem;
+      }
+    }
+    &-right {
+      .section-title,
+      .section-text {
+        padding-left: 4rem;
+      }
+    }
+  }
+
+  .arrow-down {
+    height: 2.2rem;
+    margin: 0 auto;
+    display: block;
+  }
+
+  &-title {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include mixins.mq_md {
+      text-align: start;
+    }
+  }
+
+  &-text {
+    padding-bottom: 4.5rem;
+    text-align: justify;
+  }
+
+  &-images {
+    @include mixins.flex();
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+    text-align: center;
+    gap: 4rem;
+  }
+
+  &-image {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  &-image-full {
+    display: block;
+    max-width: 100%;
   }
 }

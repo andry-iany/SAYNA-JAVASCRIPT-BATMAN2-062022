@@ -9,11 +9,12 @@ $blue: #19587d;
 $white: #ffffff;
 $gray-1: #c4c4c4;
 $gray-2: #eddebf;
+$gray-3: rgba(#bcbbbd, 0.1);
 
 // gradient
 $grad-blue: linear-gradient(90deg, rgba($gray-2, 0.4), rgba($blue, 0.4));
 $grad-red: linear-gradient(90deg, rgba($gray-2, 0.4), rgba($red-2, 0.6));
-$grad-black: linear-gradient(rgba($black-2, 0), rgba($black-2, 1));
+$grad-black: linear-gradient(rgba($black-1, 0), rgba($black-1, 1));
 
 // breakpoints
 $sm: 576px;

@@ -20,7 +20,7 @@
     @content;
   }
 }
-@mixin border($position: bottom, $color: variables.$gray-1, $width: 1px) {
+@mixin border($position: bottom, $color: variables.$gray-3, $width: 2px) {
   border-#{$position}: $width solid $color;
 }
 @mixin p_absolute($x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
