@@ -414,4 +414,41 @@ aside .icon-aside img {
 
 .multimedia > * {
   width: 100%;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  text-align: center;
+  padding: 7rem 0;
+}
+.quotes-image {
+  width: 4rem;
+}
+.quotes #quotes-image-second {
+  align-self: flex-end;
+}
+.quotes-content {
+  padding: 4rem 2rem;
+  max-width: 500px;
+}
+.quotes-text {
+  margin-bottom: 1rem;
+}
+.quotes-author {
+  color: #c4c4c4;
+  margin-bottom: 0.5rem;
+}
+.quotes-navigation-btn {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid #19587d;
+  margin: 0 1px;
+  display: inline-block;
+}
+.quotes-navigation-btn-active {
+  background-color: #19587d;
 }/*# sourceMappingURL=styles.css.map */

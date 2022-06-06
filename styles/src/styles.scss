@@ -362,3 +362,43 @@ aside {
 .multimedia > * {
   width: 100%;
 }
+
+.quotes {
+  @include mixins.flex($justify-content: space-evenly, $align-items: flex-start);
+  text-align: center;
+  padding: 7rem 0;
+
+  &-image {
+    width: 4rem;
+  }
+
+  #quotes-image-second {
+    align-self: flex-end;
+  }
+
+  &-content {
+    padding: 4rem 2rem;
+    max-width: 500px;
+  }
+
+  &-text {
+    margin-bottom: 1rem;
+  }
+  &-author {
+    color: variables.$gray-1;
+    margin-bottom: 0.5rem;
+  }
+
+  &-navigation-btn {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid variables.$blue;
+    margin: 0 1px;
+    display: inline-block;
+
+    &-active {
+      background-color: variables.$blue;
+    }
+  }
+}
