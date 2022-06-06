@@ -243,6 +243,7 @@ aside {
   @include mixins.flex($justify-content: space-between);
   gap: 1.5rem;
   font-size: 0.75rem;
+  margin-bottom: 5rem;
 
   @include mixins.mq_sm {
     font-size: 0.875rem;
@@ -294,4 +295,8 @@ aside {
       height: 100%;
     }
   }
+}
+
+.multimedia > * {
+  width: 100%;
 }
