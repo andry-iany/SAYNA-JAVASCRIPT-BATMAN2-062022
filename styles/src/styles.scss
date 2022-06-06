@@ -63,6 +63,7 @@
 
 :root {
   background-color: variables.$black-1;
+  min-width: variables.$min-width;
 }
 
 header {
@@ -235,5 +236,62 @@ aside {
   &-image-full {
     display: block;
     max-width: 100%;
+  }
+}
+
+.carousel {
+  @include mixins.flex($justify-content: space-between);
+  gap: 1.5rem;
+  font-size: 0.75rem;
+
+  @include mixins.mq_sm {
+    font-size: 0.875rem;
+  }
+
+  &-control {
+    width: 1rem;
+    cursor: pointer;
+
+    @include mixins.mq_sm {
+      width: 1.5rem;
+    }
+    @include mixins.mq_md {
+      width: 2rem;
+    }
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 500px;
+    align-items: center;
+
+    @include mixins.mq_sm {
+      grid-template-columns: 1fr 3fr;
+    }
+
+    &-text {
+      padding: 0.5rem;
+      background: variables.$grad-blue;
+      @include mixins.flex($direction: column, $align-items: start);
+      min-height: 100%;
+
+      @include mixins.mq_sm {
+        padding: 1rem;
+      }
+    }
+
+    &-text--detail {
+      display: none;
+
+      @include mixins.mq_sm {
+        display: block;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

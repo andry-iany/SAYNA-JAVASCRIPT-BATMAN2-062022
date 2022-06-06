@@ -85,6 +85,7 @@ body {
 
 :root {
   background-color: #000;
+  min-width: 375px;
 }
 
 header {
@@ -264,4 +265,69 @@ aside .icon-aside img {
 .section-image-full {
   display: block;
   max-width: 100%;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+}
+@media screen and (min-width: 576px) {
+  .carousel {
+    font-size: 0.875rem;
+  }
+}
+.carousel-control {
+  width: 1rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 576px) {
+  .carousel-control {
+    width: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .carousel-control {
+    width: 2rem;
+  }
+}
+.carousel-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 500px;
+  align-items: center;
+}
+@media screen and (min-width: 576px) {
+  .carousel-content {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+.carousel-content-text {
+  padding: 0.5rem;
+  background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  min-height: 100%;
+}
+@media screen and (min-width: 576px) {
+  .carousel-content-text {
+    padding: 1rem;
+  }
+}
+.carousel-content-text--detail {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .carousel-content-text--detail {
+    display: block;
+  }
+}
+.carousel-content-image {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=styles.css.map */
