@@ -143,7 +143,7 @@ header .link:hover::after, header .link-active::after {
   left: 0;
   top: 102%;
   width: 100%;
-  height: 0;
+  height: auto;
   text-decoration: underline;
   content: "";
 }
@@ -172,4 +172,46 @@ header .banner-description {
 }
 header .banner-title {
   margin-bottom: 1.3rem;
+}
+
+aside {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+aside .container {
+  position: relative;
+}
+aside .networks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  transform: translate(50%, -50%);
+  gap: 12px;
+}
+aside .icon-aside {
+  max-width: 2.8rem;
+}
+@media screen and (min-width: 768px) {
+  aside .icon-aside {
+    max-width: 3.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  aside .icon-aside {
+    max-width: 5rem;
+  }
+}
+aside .icon-aside img {
+  display: inline;
+  width: 100%;
 }/*# sourceMappingURL=styles.css.map */
