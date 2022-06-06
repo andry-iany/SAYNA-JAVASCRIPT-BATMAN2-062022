@@ -6,10 +6,17 @@
 // - adjust the size, padding for all elements
 
 .btn {
+  display: inline-block;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+
   &-group {
-    row-gap: 1rem;
-    column-gap: 2rem;
     @include mixins.flex($direction: column);
+    column-gap: 2rem;
+    row-gap: 1rem;
 
     @include mixins.mq_md {
       @include mixins.flex($direction: row);
@@ -20,8 +27,12 @@
     text-transform: uppercase;
     background: variables.$grad-red;
     padding: 1rem 2rem;
-    display: inline-block;
-    width: 13.125rem;
+    width: 13rem;
+  }
+
+  &-bordered {
+    padding: 0.5rem 1rem;
+    border: 1px solid variables.$gray-1;
   }
 }
 
@@ -236,6 +247,57 @@ aside {
   &-image-full {
     display: block;
     max-width: 100%;
+  }
+
+  &-form {
+    background: variables.$grad-blue;
+
+    .section-title {
+      text-align: center;
+    }
+
+    .forms {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 3rem;
+    }
+
+    label,
+    input,
+    textarea,
+    select {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-heading {
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .input-block,
+    .input-block::placeholder {
+      display: block;
+      width: 100%;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      @include mixins.border($color: variables.$gray-1, $width: 1px);
+      color: variables.$gray-1;
+      font: inherit;
+      font-size: 0.875rem;
+    }
+
+    .radio-group {
+      @include mixins.flex();
+      gap: 1rem;
+    }
+
+    .radio-group input[type="radio"] {
+      display: none;
+    }
+    .radio-group input[type="radio"]:checked + label {
+      color: red !important;
+    }
   }
 }
 

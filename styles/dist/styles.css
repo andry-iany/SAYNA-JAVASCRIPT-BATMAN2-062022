@@ -15,14 +15,22 @@ body {
   color: #ffffff;
 }
 
+.btn {
+  display: inline-block;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+}
 .btn-group {
-  row-gap: 1rem;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 1rem;
 }
 @media screen and (min-width: 768px) {
   .btn-group {
@@ -36,8 +44,11 @@ body {
   text-transform: uppercase;
   background: linear-gradient(90deg, rgba(237, 222, 191, 0.4), rgba(137, 0, 8, 0.6));
   padding: 1rem 2rem;
-  display: inline-block;
-  width: 13.125rem;
+  width: 13rem;
+}
+.btn-bordered {
+  padding: 0.5rem 1rem;
+  border: 1px solid #c4c4c4;
 }
 
 .container {
@@ -265,6 +276,74 @@ aside .icon-aside img {
 .section-image-full {
   display: block;
   max-width: 100%;
+}
+.section-form {
+  background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
+}
+.section-form .section-title {
+  text-align: center;
+}
+.section-form .forms {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+}
+.section-form label,
+.section-form input,
+.section-form textarea,
+.section-form select {
+  margin-bottom: 1.5rem;
+}
+.section-form .form-heading {
+  display: block;
+  text-transform: uppercase;
+}
+.section-form .input-block::-moz-placeholder {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  color: #c4c4c4;
+  font: inherit;
+  font-size: 0.875rem;
+}
+.section-form .input-block:-ms-input-placeholder {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  color: #c4c4c4;
+  font: inherit;
+  font-size: 0.875rem;
+}
+.section-form .input-block,
+.section-form .input-block::placeholder {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  color: #c4c4c4;
+  font: inherit;
+  font-size: 0.875rem;
+}
+.section-form .radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.section-form .radio-group input[type=radio] {
+  display: none;
+}
+.section-form .radio-group input[type=radio]:checked + label {
+  color: red !important;
 }
 
 .carousel {

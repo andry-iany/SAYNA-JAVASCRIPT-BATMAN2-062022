@@ -27,8 +27,8 @@
           </p>
           <h1 class="banner-title">Il est Batman.</h1>
           <div class="btn-group">
-            <a href="#" class="btn-translucent">Voir le héros</a>
-            <a href="#" class="btn-translucent">Les adversaires</a>
+            <a href="#" class="btn btn-translucent">Voir le héros</a>
+            <a href="#" class="btn btn-translucent">Les adversaires</a>
           </div>
         </div>
       </div>
@@ -270,6 +270,63 @@
           <img src="/assets/illustrations/Bathome_ba2.png" alt="Video" />
         </div>
       </div>
+    </section>
+
+    <section class="section section-form">
+      <h2 class="section-title">Prenons contact</h2>
+      <form action="" class="forms">
+        <div>
+          <label class="form-heading" for="email">Addresse email</label>
+          <input
+            class="input-block"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Addresse email"
+          />
+        </div>
+        <div>
+          <label class="form-heading">Newsletter</label>
+          <p>
+            En cochant cette case vous acceptez de recevoir l'actualité
+            concernant les aventures de Batman :
+            <input type="checkbox" name="checkbox" id="checkbox" />
+          </p>
+          <select class="input-block" name="select" id="select">
+            <option>
+              Chosissez la fréquence à laquelle vous souhaitez recevoir votre
+              newletter
+            </option>
+            <option value="first">First option</option>
+            <option value="second">Second option</option>
+            <option value="third">Third option</option>
+          </select>
+          <label class="input-block" for="">
+            Souhaitez vous recevoir des news
+          </label>
+          <div class="radio-group">
+            <input type="radio" name="news" id="films" />
+            <label class="btn btn-bordered" for="films">Des Films</label>
+            <input type="radio" name="news" id="comics" />
+            <label class="btn btn-bordered" for="comics">Des Comics</label>
+            <input type="radio" name="news" id="all" />
+            <label class="btn btn-bordered" for="all">De tout</label>
+          </div>
+        </div>
+        <div>
+          <label class="form-heading" for="message">Message</label>
+          <textarea
+            class="input-block"
+            name="message"
+            id="message"
+            rows="1"
+            placeholder="Laissez un commentaire pour la communauté"
+          ></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-translucent">Confirmer</button>
+        </div>
+      </form>
     </section>
 
     <aside class="aside">
