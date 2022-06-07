@@ -7,17 +7,11 @@
 // - make some refactoring to clean up our codes
 
 .btn {
-  display: inline-block;
-  outline: none;
   white-space: nowrap;
-  cursor: pointer;
-  border: none;
-  color: inherit;
 
   &-group {
     @include mixins.flex($direction: column);
-    column-gap: 2rem;
-    row-gap: 1rem;
+    gap: 1rem 2rem;
 
     @include mixins.mq_md {
       @include mixins.flex($direction: row);
@@ -33,7 +27,10 @@
 
   &-bordered {
     padding: 0.5rem 1rem;
-    border: 1px solid variables.$gray-1;
+    position: relative;
+    border: 1px solid;
+    // border-color: linear-gradient(155deg, rgba(variables.$gray-2, 0.4), rgba(variables.$blue, 0.4));
+    // TODO: style the border
   }
 }
 
@@ -211,12 +208,15 @@ aside {
   }
 
   &.arrow-down {
-    margin-bottom: 4rem;
+    .container {
+      padding-bottom: 4rem;
+    }
 
     img {
       height: 2.2rem;
       margin: 0 auto;
       display: block;
+      cursor: pointer;
     }
   }
 
@@ -280,21 +280,29 @@ aside {
       text-transform: uppercase;
     }
 
+    .form-heading ~ *,
+    .form-heading ~ ::placeholder {
+      @include mixins.text-light;
+    }
+
     .input-block,
     .input-block::placeholder {
       display: block;
       width: 100%;
       background-color: transparent;
-      outline: none;
-      border: none;
       @include mixins.border($color: variables.$gray-1, $width: 1px);
-      color: variables.$gray-1;
-      font: inherit;
       font-size: 0.875rem;
+    }
+
+    .checkbox-wrapper {
+      @include mixins.mq_md {
+        max-width: 90%;
+      }
     }
 
     .radio-group {
       @include mixins.flex();
+      @include mixins.text-white;
       gap: 1rem;
     }
 
@@ -302,6 +310,7 @@ aside {
       display: none;
     }
     .radio-group input[type="radio"]:checked + label {
+      // TODO: change this
       color: red !important;
     }
   }
@@ -365,8 +374,12 @@ aside {
   }
 }
 
-.multimedia > * {
-  width: 100%;
+.multimedia {
+  padding-bottom: 6rem;
+
+  > * {
+    width: 100%;
+  }
 }
 
 .quotes {
@@ -391,7 +404,7 @@ aside {
     margin-bottom: 1rem;
   }
   &-author {
-    color: variables.$gray-1;
+    @include mixins.text-light;
     margin-bottom: 0.5rem;
   }
 

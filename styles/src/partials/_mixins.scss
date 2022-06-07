@@ -36,3 +36,10 @@
   justify-content: $justify-content;
   align-items: $align-items;
 }
+
+@mixin text-light {
+  color: variables.$gray-1;
+}
+@mixin text-white {
+  color: variables.$white;
+}

@@ -15,22 +15,30 @@ body {
   color: #ffffff;
 }
 
-.btn {
-  display: inline-block;
+input,
+textarea,
+select,
+button {
+  font: inherit;
   outline: none;
-  white-space: nowrap;
-  cursor: pointer;
   border: none;
   color: inherit;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn {
+  white-space: nowrap;
 }
 .btn-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  row-gap: 1rem;
+  gap: 1rem 2rem;
 }
 @media screen and (min-width: 768px) {
   .btn-group {
@@ -48,7 +56,8 @@ body {
 }
 .btn-bordered {
   padding: 0.5rem 1rem;
-  border: 1px solid #c4c4c4;
+  position: relative;
+  border: 1px solid;
 }
 
 .container {
@@ -239,13 +248,14 @@ aside .icon-aside img {
     padding-left: 4rem;
   }
 }
-.section.arrow-down {
-  margin-bottom: 4rem;
+.section.arrow-down .container {
+  padding-bottom: 4rem;
 }
 .section.arrow-down img {
   height: 2.2rem;
   margin: 0 auto;
   display: block;
+  cursor: pointer;
 }
 .section-title {
   padding-top: 2rem;
@@ -302,26 +312,28 @@ aside .icon-aside img {
   display: block;
   text-transform: uppercase;
 }
+.section-form .form-heading ~ ::-moz-placeholder {
+  color: #c4c4c4;
+}
+.section-form .form-heading ~ :-ms-input-placeholder {
+  color: #c4c4c4;
+}
+.section-form .form-heading ~ *,
+.section-form .form-heading ~ ::placeholder {
+  color: #c4c4c4;
+}
 .section-form .input-block::-moz-placeholder {
   display: block;
   width: 100%;
   background-color: transparent;
-  outline: none;
-  border: none;
   border-bottom: 1px solid #c4c4c4;
-  color: #c4c4c4;
-  font: inherit;
   font-size: 0.875rem;
 }
 .section-form .input-block:-ms-input-placeholder {
   display: block;
   width: 100%;
   background-color: transparent;
-  outline: none;
-  border: none;
   border-bottom: 1px solid #c4c4c4;
-  color: #c4c4c4;
-  font: inherit;
   font-size: 0.875rem;
 }
 .section-form .input-block,
@@ -329,18 +341,20 @@ aside .icon-aside img {
   display: block;
   width: 100%;
   background-color: transparent;
-  outline: none;
-  border: none;
   border-bottom: 1px solid #c4c4c4;
-  color: #c4c4c4;
-  font: inherit;
   font-size: 0.875rem;
+}
+@media screen and (min-width: 768px) {
+  .section-form .checkbox-wrapper {
+    max-width: 90%;
+  }
 }
 .section-form .radio-group {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
   gap: 1rem;
 }
 .section-form .radio-group input[type=radio] {
@@ -416,6 +430,9 @@ aside .icon-aside img {
   height: 100%;
 }
 
+.multimedia {
+  padding-bottom: 6rem;
+}
 .multimedia > * {
   width: 100%;
 }
