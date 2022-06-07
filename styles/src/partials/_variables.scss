@@ -25,3 +25,23 @@ $xl: 1110px;
 // width
 $min-width: 375px;
 $max-width: 1020px;
+
+// fonts
+@font-face {
+  font-family: "Rajdhani";
+  src: url(/assets/fonts/Rajdhani-Medium.ttf) format("TrueType");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url(/assets/fonts/SpaceGrotesk-Bold.ttf) format("TrueType");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url(/assets/fonts/SpaceGrotesk-Regular.ttf) format("TrueType");
+  font-weight: 400;
+  font-style: normal;
+}

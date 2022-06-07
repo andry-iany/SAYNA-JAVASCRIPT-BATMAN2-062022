@@ -13,8 +13,18 @@ a:focus {
   text-decoration: none;
 }
 
+:root {
+  scroll-behavior: smooth;
+  background-color: variables.$black-1;
+  min-width: variables.$min-width;
+}
+
 body {
   color: variables.$white;
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: normal;
 }
 
 input,
