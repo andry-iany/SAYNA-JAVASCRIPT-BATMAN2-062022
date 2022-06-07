@@ -3,7 +3,6 @@
 @use "partials/variables";
 
 // TODO:
-// - adjust the size, padding for all elements
 // - make some refactoring to clean up our codes
 
 .btn {
@@ -32,8 +31,7 @@
     padding: 0.5rem 1rem;
     position: relative;
     border: 1px solid;
-    // border-color: linear-gradient(155deg, rgba(variables.$gray-2, 0.4), rgba(variables.$blue, 0.4));
-    // TODO: style the border
+    border-image: variables.$grad-blue 1;
   }
 }
 
