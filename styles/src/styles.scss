@@ -40,6 +40,10 @@
   }
 }
 
+.fade-in {
+  @include mixins.animation-fade-in();
+}
+
 .container {
   position: relative;
   z-index: 10;
@@ -105,10 +109,12 @@ header {
       }
     }
   }
+
   .links {
     @include mixins.flex($justify-content: space-between);
     font-size: 2rem;
   }
+
   .link {
     position: relative;
 
@@ -218,7 +224,7 @@ aside {
     font-size: 1.75rem;
     text-align: center;
     text-transform: uppercase;
-    @include mixins.padding_y(2rem);
+    @include mixins.padding_y(2rem, 2rem);
     @include mixins.font_spaceGrotesk(700);
 
     @include mixins.mq_md {
@@ -240,7 +246,7 @@ aside {
       }
       @include mixins.mq_lg {
         height: 18rem;
-        transform: translateY(-70%);
+        transform: translateY(-80%);
       }
     }
   }

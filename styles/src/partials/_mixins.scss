@@ -59,3 +59,17 @@
   padding-top: $top;
   padding-bottom: $bottom;
 }
+
+@keyframes fade-in {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@mixin animation-fade-in() {
+  animation: fade-in 0.3s ease-in-out;
+}
