@@ -59,9 +59,9 @@ button {
 }
 
 .btn {
-  white-space: nowrap;
   font-family: "Rajdhani", sans-serif;
   font-weight: 500;
+  white-space: nowrap;
   font-size: 1.25rem;
   cursor: pointer;
 }
@@ -144,10 +144,8 @@ button {
 }
 
 header {
-  background-image: url("/assets/illustrations/Bathome1.png");
-  background-repeat: no-repeat;
+  background: url("/assets/illustrations/Bathome1.png") no-repeat top center;
   background-size: cover;
-  background-position: top center;
   position: relative;
 }
 header::after {
@@ -194,18 +192,18 @@ header .link {
   position: relative;
 }
 header .link:hover::after, header .link-active::after {
+  content: "";
+  text-decoration: underline;
   border-bottom: 2px solid #ffffff;
   position: absolute;
   left: 0;
   top: 102%;
   width: 100%;
   height: auto;
-  text-decoration: underline;
-  content: "";
 }
 header .banner-wrapper {
-  max-width: 75%;
   margin: 0 auto;
+  max-width: 75%;
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -227,19 +225,19 @@ header .banner-description {
   margin-bottom: 1rem;
 }
 header .banner-title {
+  font-size: 2.25rem;
   margin-bottom: 1.3rem;
   font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  font-size: 2.25rem;
 }
 
 aside {
-  width: 100%;
   position: fixed;
   z-index: 99;
-  top: 50%;
   left: 0;
+  top: 50%;
   transform: translateY(-50%);
+  width: 100%;
 }
 aside .container {
   position: relative;
@@ -295,13 +293,13 @@ aside .icon-aside img {
   cursor: pointer;
 }
 .section-title {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  font-size: 1.75rem;
   text-align: center;
   text-transform: uppercase;
-  font-family: "SpaceGrotesk", sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 0;
+  font-family: "Rajdhani", sans-serif;
   font-weight: 700;
-  font-size: 1.75rem;
 }
 @media screen and (min-width: 768px) {
   .section-title {
@@ -339,10 +337,11 @@ aside .icon-aside img {
   position: relative;
 }
 .section-title #nemesis img {
-  height: 5.5rem;
   position: absolute;
-  bottom: 0;
   left: 100%;
+  bottom: 0;
+  width: auto;
+  height: 5.5rem;
   transform: translateX(-40%);
 }
 .section-text {
@@ -354,10 +353,10 @@ aside .icon-aside img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 4rem;
+  text-align: center;
   flex-wrap: wrap;
   padding-bottom: 4rem;
-  text-align: center;
-  gap: 4rem;
 }
 .section-image {
   display: block;
@@ -439,16 +438,16 @@ aside .icon-aside img {
 }
 
 .carousel {
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  margin-bottom: 5rem;
+  color: #c4c4c4;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
-  font-family: "SpaceGrotesk", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #c4c4c4;
-  margin-bottom: 5rem;
 }
 @media screen and (min-width: 576px) {
   .carousel {
@@ -481,14 +480,14 @@ aside .icon-aside img {
   }
 }
 .carousel-content-text {
-  padding: 0.5rem;
   gap: 0.5rem;
+  padding: 0.5rem;
+  min-height: 100%;
   background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  min-height: 100%;
 }
 @media screen and (min-width: 576px) {
   .carousel-content-text {
@@ -531,11 +530,13 @@ aside .icon-aside img {
   display: block;
 }
 .video-wrapper #icon-player {
-  display: none;
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
+  width: auto;
+  height: auto;
   transform: translate(-50%, -50%);
+  display: none;
 }
 
 .quotes {

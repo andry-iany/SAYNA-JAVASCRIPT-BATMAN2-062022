@@ -2,13 +2,9 @@
 @use "partials/mixins";
 @use "partials/variables";
 
-// TODO:
-// - make some refactoring to clean up our codes
-
 .btn {
+  @include mixins.font_rajdhani(500);
   white-space: nowrap;
-  font-family: "Rajdhani", sans-serif;
-  font-weight: 500;
   font-size: 1.25rem;
   cursor: pointer;
 
@@ -81,10 +77,8 @@
 }
 
 header {
-  background-image: url("/assets/illustrations/Bathome1.png");
-  background-repeat: no-repeat;
+  background: url("/assets/illustrations/Bathome1.png") no-repeat top center;
   background-size: cover;
-  background-position: top center;
   position: relative;
 
   &::after {
@@ -101,16 +95,13 @@ header {
 
     &-wrapper {
       @include mixins.flex($justify-content: space-between);
-      padding-top: 2.5rem;
-      padding-bottom: 3rem;
+      @include mixins.padding_y(2.5rem, 3rem);
 
       @include mixins.mq_md {
-        padding-top: 3rem;
-        padding-bottom: 3.5rem;
+        @include mixins.padding_y(3rem, 3.5rem);
       }
       @include mixins.mq_lg {
-        padding-top: 4rem;
-        padding-bottom: 4.5rem;
+        @include mixins.padding_y(4rem, 4.5rem);
       }
     }
   }
@@ -123,29 +114,26 @@ header {
 
     &:hover::after,
     &-active::after {
+      content: "";
+      text-decoration: underline;
       @include mixins.border(bottom, variables.$white, 2px);
       @include mixins.p_absolute($y_value: 102%);
-      text-decoration: underline;
-      content: "";
     }
   }
 
   .banner {
     &-wrapper {
-      max-width: 75%;
       margin: 0 auto;
+      max-width: 75%;
       text-align: center;
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      @include mixins.padding_y(4rem, 4rem);
 
       @include mixins.mq_md {
-        padding-top: 6rem;
-        padding-bottom: 8rem;
+        @include mixins.padding_y(6rem, 8rem);
       }
       @include mixins.mq_lg {
         max-width: 60%;
-        padding-top: 10rem;
-        padding-bottom: 14rem;
+        @include mixins.padding_y(10rem, 14rem);
       }
     }
 
@@ -154,21 +142,20 @@ header {
     }
 
     &-title {
-      margin-bottom: 1.3rem;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 500;
       font-size: 2.25rem;
+      margin-bottom: 1.3rem;
+      @include mixins.font_rajdhani(500);
     }
   }
 }
 
 aside {
-  width: 100%;
   position: fixed;
   z-index: 99;
-  top: 50%;
   left: 0;
+  top: 50%;
   transform: translateY(-50%);
+  width: 100%;
 
   .container {
     position: relative;
@@ -228,13 +215,11 @@ aside {
   }
 
   &-title {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-size: 1.75rem;
     text-align: center;
     text-transform: uppercase;
-    font-family: "SpaceGrotesk", sans-serif;
-    font-weight: 700;
-    font-size: 1.75rem;
+    @include mixins.padding_y(2rem);
+    @include mixins.font_spaceGrotesk(700);
 
     @include mixins.mq_md {
       text-align: start;
@@ -265,10 +250,7 @@ aside {
     position: relative;
   }
   &-title #nemesis img {
-    height: 5.5rem;
-    position: absolute;
-    bottom: 0;
-    left: 100%;
+    @include mixins.p_absolute($x_value: 100%, $y_axis: bottom, $width: auto, $height: 5.5rem);
     transform: translateX(-40%);
   }
 
@@ -279,10 +261,10 @@ aside {
 
   &-images {
     @include mixins.flex();
+    gap: 4rem;
+    text-align: center;
     flex-wrap: wrap;
     padding-bottom: 4rem;
-    text-align: center;
-    gap: 4rem;
   }
 
   &-image {
@@ -353,20 +335,16 @@ aside {
     .radio-group input[type="radio"] {
       display: none;
     }
-    // .radio-group input[type="radio"]:checked + label {
-    //   background: variables.$grad-blue-transp;
-    // }
   }
 }
 
 .carousel {
-  @include mixins.flex($justify-content: space-between);
   gap: 1.5rem;
-  font-family: "SpaceGrotesk", sans-serif;
   font-size: 0.75rem;
-  font-weight: 400;
-  color: variables.$gray-1;
   margin-bottom: 5rem;
+  color: variables.$gray-1;
+  @include mixins.font_spaceGrotesk(400);
+  @include mixins.flex($justify-content: space-between);
 
   @include mixins.mq_sm {
     font-size: 0.875rem;
@@ -395,11 +373,11 @@ aside {
     }
 
     &-text {
-      padding: 0.5rem;
       gap: 0.5rem;
+      padding: 0.5rem;
+      min-height: 100%;
       background: variables.$grad-blue-transp;
       @include mixins.flex($direction: column, $align-items: start);
-      min-height: 100%;
 
       @include mixins.mq_sm {
         padding: 1rem;
@@ -450,11 +428,9 @@ aside {
   }
 
   #icon-player {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    @include mixins.p_absolute($x_value: 50%, $y_value: 50%, $width: auto, $height: auto);
     transform: translate(-50%, -50%);
+    display: none;
   }
 }
 

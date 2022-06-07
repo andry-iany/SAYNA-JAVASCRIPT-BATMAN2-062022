@@ -43,3 +43,19 @@
 @mixin text-white {
   color: variables.$white;
 }
+@mixin font_rajdhani($font-weight: 500) {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: $font-weight;
+}
+@mixin font_spaceGrotesk($font-weight: 400) {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: $font-weight;
+}
+@mixin padding_x($left: 0, $right: 0) {
+  padding-left: $left;
+  padding-right: $right;
+}
+@mixin padding_y($top: 0, $bottom: 0) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
