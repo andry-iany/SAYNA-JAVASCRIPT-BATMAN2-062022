@@ -40,6 +40,10 @@
   }
 }
 
+.fade-in {
+  @include mixins.animation-fade-in();
+}
+
 .container {
   position: relative;
   z-index: 10;
@@ -242,7 +246,7 @@ aside {
       }
       @include mixins.mq_lg {
         height: 18rem;
-        transform: translateY(-70%);
+        transform: translateY(-80%);
       }
     }
   }

@@ -58,6 +58,27 @@ button {
   display: inline-block;
 }
 
+@-webkit-keyframes fade-in {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .btn {
   cursor: pointer;
   font-size: 1.25rem;
@@ -98,6 +119,11 @@ button {
 }
 .btn-bordered:hover {
   background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
+}
+
+.fade-in {
+  -webkit-animation: fade-in 0.3s ease-in-out;
+          animation: fade-in 0.3s ease-in-out;
 }
 
 .container {
@@ -327,7 +353,7 @@ aside .icon-aside img {
 @media screen and (min-width: 992px) {
   .section-ally > img {
     height: 18rem;
-    transform: translateY(-70%);
+    transform: translateY(-80%);
   }
 }
 .section-title #nemesis {
