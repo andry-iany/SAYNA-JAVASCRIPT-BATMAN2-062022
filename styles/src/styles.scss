@@ -231,6 +231,18 @@ aside {
     }
   }
 
+  &-title #nemesis {
+    width: max-content;
+    position: relative;
+  }
+  &-title #nemesis img {
+    height: 5.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    transform: translateX(-40%);
+  }
+
   &-text {
     padding-bottom: 4.5rem;
     text-align: justify;

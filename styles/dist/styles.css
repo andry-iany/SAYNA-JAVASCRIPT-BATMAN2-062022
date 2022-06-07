@@ -268,6 +268,19 @@ aside .icon-aside img {
     text-align: start;
   }
 }
+.section-title #nemesis {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: relative;
+}
+.section-title #nemesis img {
+  height: 5.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  transform: translateX(-40%);
+}
 .section-text {
   padding-bottom: 4.5rem;
   text-align: justify;
