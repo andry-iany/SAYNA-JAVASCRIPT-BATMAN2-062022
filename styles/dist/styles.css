@@ -63,6 +63,7 @@ button {
   font-family: "Rajdhani", sans-serif;
   font-weight: 500;
   font-size: 1.25rem;
+  cursor: pointer;
 }
 .btn-group {
   display: flex;
@@ -85,12 +86,18 @@ button {
   padding: 1rem 2rem;
   width: 13rem;
 }
+.btn-translucent:hover {
+  background: linear-gradient(90deg, #eddebf, #890008);
+}
 .btn-bordered {
   padding: 0.5rem 1rem;
   position: relative;
   border: 1px solid;
   -o-border-image: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4)) 1;
      border-image: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4)) 1;
+}
+.btn-bordered:hover {
+  background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
 }
 
 .container {
@@ -357,6 +364,9 @@ aside .icon-aside img {
   max-width: 100%;
   margin-bottom: 1.5rem;
 }
+.section-image-wrapper:hover {
+  transform: scale(1.1);
+}
 .section-image-full {
   display: block;
   max-width: 100%;
@@ -426,9 +436,6 @@ aside .icon-aside img {
 }
 .section-form .radio-group input[type=radio] {
   display: none;
-}
-.section-form .radio-group input[type=radio]:checked + label {
-  color: red !important;
 }
 
 .carousel {
@@ -510,8 +517,25 @@ aside .icon-aside img {
 .video-wrapper {
   padding-bottom: 6rem;
 }
-.video-wrapper > * {
+.video-wrapper #img-ba {
   width: 100%;
+}
+.video-wrapper #link-ba {
+  position: relative;
+  display: block;
+}
+.video-wrapper #link-ba:hover {
+  box-shadow: 0 0 25px 0 #c4c4c4;
+}
+.video-wrapper #link-ba:hover #icon-player {
+  display: block;
+}
+.video-wrapper #icon-player {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .quotes {

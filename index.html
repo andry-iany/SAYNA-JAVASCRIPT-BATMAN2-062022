@@ -27,8 +27,12 @@
           </p>
           <h1 class="banner-title">Il est Batman.</h1>
           <div class="btn-group">
-            <a href="#" class="btn btn-translucent">Voir le héros</a>
-            <a href="#" class="btn btn-translucent">Les adversaires</a>
+            <a href="#section-cinema" class="btn btn-translucent">
+              Voir le héros
+            </a>
+            <a href="#section-nemesis" class="btn btn-translucent">
+              Les adversaires
+            </a>
           </div>
         </div>
       </div>
@@ -40,7 +44,7 @@
       </div>
     </section>
 
-    <section class="section section-left">
+    <section id="section-cinema" class="section section-left">
       <div class="container">
         <h2 class="section-title">BATMAN AU CINÉMA</h2>
 
@@ -95,7 +99,7 @@
       </div>
     </section>
 
-    <section class="section section-left">
+    <section id="section-nemesis" class="section section-left">
       <div class="container">
         <h2 class="section-title">
           <p id="nemesis">
@@ -270,22 +274,24 @@
           />
         </article>
         <div class="video-wrapper">
-          <iframe
-            width="791"
-            height="445"
-            src="https://www.youtube.com/embed/jXrFsn9pcZY"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <a id="link-ba" href="#">
+            <img
+              id="img-ba"
+              src="/assets/illustrations/Bathome_ba2.png"
+              alt="Bande annonce Batman"
+            />
+            <img
+              id="icon-player"
+              src="/assets/logos/icon_player.png"
+              alt="Play"
+            />
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section section-form">
+    <section id="section-form" class="section section-form">
       <h2 class="section-title">Prenons contact</h2>
-      <!-- TODO: improve the style for this -->
       <form action="" class="forms">
         <div>
           <label class="form-heading" for="email">Addresse email</label>
@@ -437,10 +443,10 @@
           <a href="#" class="icon-small">
             <img src="/assets/logos/icon_tw.png" alt="Twitter" />
           </a>
-          <a href="#footer" class="icon-aside">
+          <a href="#section-form" class="icon-aside">
             <img
               src="/assets/logos/logo_bat_flèche_2.png"
-              alt="Go to the bottom"
+              alt="Fill up the form"
             />
           </a>
         </div>
