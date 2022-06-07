@@ -231,6 +231,25 @@ aside {
     }
   }
 
+  &-ally {
+    position: relative;
+
+    > img {
+      @include mixins.p_absolute($x_axis: right, $width: auto, $height: 11rem);
+      transform: translateY(-50%);
+      z-index: 11;
+
+      @include mixins.mq_md {
+        height: 15rem;
+        transform: translateY(-65%);
+      }
+      @include mixins.mq_lg {
+        height: 18rem;
+        transform: translateY(-70%);
+      }
+    }
+  }
+
   &-title #nemesis {
     width: max-content;
     position: relative;

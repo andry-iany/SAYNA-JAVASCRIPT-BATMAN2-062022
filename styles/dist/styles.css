@@ -268,6 +268,30 @@ aside .icon-aside img {
     text-align: start;
   }
 }
+.section-ally {
+  position: relative;
+}
+.section-ally > img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: 11rem;
+  transform: translateY(-50%);
+  z-index: 11;
+}
+@media screen and (min-width: 768px) {
+  .section-ally > img {
+    height: 15rem;
+    transform: translateY(-65%);
+  }
+}
+@media screen and (min-width: 992px) {
+  .section-ally > img {
+    height: 18rem;
+    transform: translateY(-70%);
+  }
+}
 .section-title #nemesis {
   width: -webkit-max-content;
   width: -moz-max-content;
