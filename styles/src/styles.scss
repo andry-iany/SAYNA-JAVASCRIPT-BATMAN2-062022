@@ -40,7 +40,12 @@
   }
 }
 
-.fade-in {
+.fade-in-hidden {
+  // hide the element to be animated before the animation actually occurs
+  opacity: 0;
+}
+
+.fade-in-shown {
   @include mixins.animation-fade-in();
 }
 
