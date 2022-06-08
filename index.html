@@ -334,15 +334,39 @@
             </span>
             <input type="checkbox" name="checkbox" id="checkbox" />
           </div>
-          <select class="input-block" name="select" id="select">
-            <option>
-              Chosissez la fréquence à laquelle vous souhaitez recevoir votre
-              newletter
-            </option>
-            <option value="first">First option</option>
-            <option value="second">Second option</option>
-            <option value="third">Third option</option>
-          </select>
+          <!-- we could not apply linear-gradient to "option" element hence we create our own "select" -->
+          <div id="select">
+            <p class="select-option-visible input-block">
+              <span class="select-option-visible-text">
+                Chosissez la fréquence à laquelle vous souhaitez recevoir votre
+                newletter
+              </span>
+              <img
+                class="select-option-visible-icon"
+                src="/assets/logos/chevron-down.svg"
+                alt=""
+              />
+            </p>
+
+            <ul class="select-options">
+              <!-- "data-value" contains the "value" of our "option" -->
+              <li class="select-option" data-value="1_week">
+                Une fois par semaine
+              </li>
+              <li class="select-option" data-value="2_week">
+                Une fois toutes les deux semaines
+              </li>
+              <li class="select-option" data-value="1_month">
+                Une fois par mois
+              </li>
+              <li class="select-option" data-value="3_month">
+                Une fois toutes les trois mois
+              </li>
+              <li class="select-option" data-value="6_month">
+                Une fois toutes les six mois
+              </li>
+            </ul>
+          </div>
           <label class="input-block" for="">
             Souhaitez vous recevoir des news
           </label>

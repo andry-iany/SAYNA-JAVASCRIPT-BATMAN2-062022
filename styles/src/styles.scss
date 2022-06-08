@@ -306,15 +306,19 @@ aside {
     }
 
     .forms {
-      max-width: 720px;
+      max-width: variables.$lg;
       margin: 0 auto;
-      padding: 2rem 3rem;
+      padding: 2rem 4rem;
+
+      @include mixins.mq_md {
+        padding: 2rem 6rem;
+      }
     }
 
     label,
     input,
     textarea,
-    select {
+    .select-option-visible {
       margin-bottom: 1.8rem;
     }
 
@@ -478,12 +482,12 @@ aside {
   }
 
   &-navigation-btn {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    border: 1px solid variables.$blue;
     margin: 0 1px;
     display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 1px solid variables.$blue;
+    border-radius: 50%;
 
     &-active {
       background-color: variables.$blue;
@@ -518,5 +522,58 @@ footer {
 
   &-medium {
     height: 2.8rem;
+  }
+}
+
+#select {
+  position: relative;
+
+  &.select-shown {
+    .select-options {
+      display: block;
+    }
+
+    .select-option-visible-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .select-options {
+    @include mixins.p_absolute($x_value: 0, $y_value: 100%);
+    z-index: 1;
+    display: none;
+    background: variables.$black-1;
+  }
+
+  .select-option-visible {
+    display: grid;
+    grid-template: 1fr / 1fr 2rem;
+    cursor: pointer;
+
+    &-text {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &-icon {
+      height: 1rem;
+      justify-self: end;
+      align-self: center;
+    }
+  }
+
+  .select-option {
+    background: variables.$grad-blue-transp-2;
+    padding: 0.5rem;
+    min-width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    @include mixins.border(bottom);
+
+    &:hover {
+      background: variables.$grad-blue-transp;
+    }
   }
 }

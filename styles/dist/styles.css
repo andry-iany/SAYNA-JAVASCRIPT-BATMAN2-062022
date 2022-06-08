@@ -58,6 +58,10 @@ button {
   display: inline-block;
 }
 
+ul {
+  list-style-type: none;
+}
+
 @-webkit-keyframes fade-in {
   0% {
     transform: translateX(-3rem);
@@ -411,14 +415,19 @@ aside .icon-aside img {
   text-align: center;
 }
 .section-form .forms {
-  max-width: 720px;
+  max-width: 992px;
   margin: 0 auto;
-  padding: 2rem 3rem;
+  padding: 2rem 4rem;
+}
+@media screen and (min-width: 768px) {
+  .section-form .forms {
+    padding: 2rem 6rem;
+  }
 }
 .section-form label,
 .section-form input,
 .section-form textarea,
-.section-form select {
+.section-form .select-option-visible {
   margin-bottom: 1.8rem;
 }
 .section-form .form-heading {
@@ -599,12 +608,12 @@ aside .icon-aside img {
   margin-bottom: 0.5rem;
 }
 .quotes-navigation-btn {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  border: 1px solid #19587d;
   margin: 0 1px;
   display: inline-block;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #19587d;
+  border-radius: 50%;
 }
 .quotes-navigation-btn-active {
   background-color: #19587d;
@@ -633,4 +642,51 @@ footer .networks {
 }
 .icon-medium {
   height: 2.8rem;
+}
+
+#select {
+  position: relative;
+}
+#select.select-shown .select-options {
+  display: block;
+}
+#select.select-shown .select-option-visible-icon {
+  transform: rotate(180deg);
+}
+#select .select-options {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  display: none;
+  background: #000;
+}
+#select .select-option-visible {
+  display: grid;
+  grid-template: 1fr/1fr 2rem;
+  cursor: pointer;
+}
+#select .select-option-visible-text {
+  white-space: nowrap;
+  overflow: hidden;
+}
+#select .select-option-visible-icon {
+  height: 1rem;
+  justify-self: end;
+  align-self: center;
+}
+#select .select-option {
+  background: linear-gradient(165deg, rgba(237, 222, 191, 0.6), rgba(25, 88, 125, 0.6));
+  padding: 0.5rem;
+  min-width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(188, 187, 189, 0.1);
+}
+#select .select-option:hover {
+  background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
 }/*# sourceMappingURL=styles.css.map */
