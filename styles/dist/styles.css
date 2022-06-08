@@ -103,6 +103,9 @@ button {
 }
 .btn-translucent {
   width: 13rem;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   padding: 1rem 2rem;
   text-transform: uppercase;
   background: linear-gradient(90deg, rgba(237, 222, 191, 0.4), rgba(137, 0, 8, 0.6));

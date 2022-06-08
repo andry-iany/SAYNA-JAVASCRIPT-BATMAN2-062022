@@ -19,6 +19,7 @@
 
   &-translucent {
     width: 13rem;
+    min-width: max-content;
     padding: 1rem 2rem;
     text-transform: uppercase;
     background: variables.$grad-red-transp;
