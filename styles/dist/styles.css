@@ -179,6 +179,9 @@ ul {
     height: 3.5rem;
   }
 }
+.logo img {
+  height: 100%;
+}
 
 header {
   position: relative;
@@ -306,7 +309,6 @@ aside .icon-aside {
   }
 }
 aside .icon-aside img {
-  display: inline;
   width: 100%;
 }
 
@@ -643,6 +645,22 @@ footer .networks {
 .icon-medium {
   height: 2.8rem;
 }
+.icon-large {
+  width: 2.8rem;
+}
+@media screen and (min-width: 768px) {
+  .icon-large {
+    width: 3.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .icon-large {
+    width: 5rem;
+  }
+}
+.icon-large img {
+  width: 100%;
+}
 
 #select {
   position: relative;
@@ -689,4 +707,17 @@ footer .networks {
 }
 #select .select-option:hover {
   background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
+}
+
+.icon-link {
+  position: relative;
+}
+.icon-link .img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.icon-link:hover .img-hover {
+  opacity: 1;
 }/*# sourceMappingURL=styles.css.map */

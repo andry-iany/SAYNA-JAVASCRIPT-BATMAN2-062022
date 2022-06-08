@@ -83,6 +83,10 @@
   @include mixins.mq_lg {
     height: 3.5rem;
   }
+
+  img {
+    height: 100%;
+  }
 }
 
 header {
@@ -190,7 +194,6 @@ aside {
     }
 
     img {
-      display: inline;
       width: 100%;
     }
   }
@@ -523,6 +526,20 @@ footer {
   &-medium {
     height: 2.8rem;
   }
+
+  &-large {
+    width: 2.8rem;
+
+    @include mixins.mq_md {
+      width: 3.5rem;
+    }
+    @include mixins.mq_lg {
+      width: 5rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
 }
 
 #select {
@@ -575,5 +592,20 @@ footer {
     &:hover {
       background: variables.$grad-blue-transp;
     }
+  }
+}
+
+.icon-link {
+  position: relative;
+
+  .img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  &:hover .img-hover {
+    opacity: 1;
   }
 }
