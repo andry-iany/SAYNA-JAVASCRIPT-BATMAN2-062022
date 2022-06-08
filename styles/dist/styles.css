@@ -394,7 +394,8 @@ aside .icon-aside img {
   margin-bottom: 1.5rem;
 }
 .section-image-wrapper:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
+  transition: all ease 5s;
 }
 .section-image-full {
   display: block;
