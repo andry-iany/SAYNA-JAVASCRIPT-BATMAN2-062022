@@ -164,6 +164,46 @@ header {
   }
 }
 
+.popup {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: none;
+
+  &-shown {
+    display: block;
+  }
+
+  &-content {
+    position: relative;
+  }
+
+  &-content::after,
+  &-body {
+    @include mixins.flex($direction: column);
+    @include mixins.p_absolute($x_value: 50%, $y_value: 50%, $width: 60%, $height: 250px);
+    max-width: 300px;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+  }
+
+  &-content::after {
+    // the background of the popup is obtained by superposing "$black-1" and "$grad-blue-transp-2"
+    // so we need this to get the "$black-1" layer
+    content: "";
+    z-index: -1;
+    background: variables.$black-1;
+  }
+
+  &-body {
+    background: variables.$grad-blue-transp-2;
+    text-transform: uppercase;
+    box-shadow: 0 0 2rem 0 variables.$black-3;
+  }
+}
+
 aside {
   position: fixed;
   z-index: 99;
@@ -573,6 +613,7 @@ footer {
     z-index: 1;
     display: none;
     background: variables.$black-1;
+    box-shadow: 0 0 2rem 0 variables.$black-3;
   }
 
   .select-option-visible {

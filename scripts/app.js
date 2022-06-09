@@ -16,6 +16,19 @@ function handleIntersecting(entries) {
   );
 }
 
+// FORM
+const form = document.querySelector(".forms");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  showPopup();
+});
+
+function showPopup() {
+  const popup = document.querySelector(".popup");
+  popup.classList.add("popup-shown");
+  setTimeout(() => popup.classList.remove("popup-shown"), 3000);
+}
+
 // CUSTOM SELECT
 const select = document.querySelector("#select");
 

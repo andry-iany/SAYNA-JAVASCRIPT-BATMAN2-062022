@@ -328,6 +328,7 @@
             name="email"
             id="email"
             placeholder="Addresse email"
+            required
           />
         </div>
         <div>
@@ -337,7 +338,7 @@
               En cochant cette case vous acceptez de recevoir l'actualité
               concernant les aventures de Batman :
             </span>
-            <input type="checkbox" name="checkbox" id="checkbox" />
+            <input type="checkbox" name="checkbox" id="checkbox" required />
           </div>
           <!-- we could not apply linear-gradient to "option" element hence we create our own "select" -->
           <div id="select">
@@ -392,6 +393,7 @@
             class="input-block"
             placeholder="Laissez un commentaire pour la communauté"
             rows="1"
+            required
           ></textarea>
         </div>
         <div class="btn-group">
@@ -503,6 +505,14 @@
         </div>
       </div>
     </footer>
+
+    <article class="popup">
+      <div class="popup-content">
+        <div class="popup-body">
+          <span>Message reçu</span>
+        </div>
+      </div>
+    </article>
 
     <aside class="aside">
       <div class="container">
