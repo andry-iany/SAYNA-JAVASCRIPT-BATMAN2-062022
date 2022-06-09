@@ -273,10 +273,11 @@ header .banner-title {
 
 .popup {
   position: fixed;
-  z-index: 100;
-  top: 50%;
   left: 0;
+  top: 50%;
   width: 100%;
+  height: auto;
+  z-index: 100;
   display: none;
 }
 .popup-shown {
@@ -312,11 +313,11 @@ header .banner-title {
 
 aside {
   position: fixed;
-  z-index: 99;
-  top: 50%;
   left: 0;
+  top: 50%;
   width: 100%;
-  transform: translateY(-50%);
+  height: auto;
+  z-index: 99;
 }
 aside .container {
   position: relative;

@@ -5,31 +5,45 @@
     @content;
   }
 }
+
 @mixin mq_md {
   @media screen and (min-width: variables.$md) {
     @content;
   }
 }
+
 @mixin mq_lg {
   @media screen and (min-width: variables.$lg) {
     @content;
   }
 }
+
 @mixin mq_xl {
   @media screen and (min-width: variables.$xl) {
     @content;
   }
 }
+
 @mixin border($position: bottom, $color: variables.$gray-3, $width: 2px) {
   border-#{$position}: $width solid $color;
 }
-@mixin p_absolute($x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
-  position: absolute;
+
+@mixin position($type, $x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
+  position: $type;
   #{$x_axis}: $x_value;
   #{$y_axis}: $y_value;
   width: $width;
   height: $height;
 }
+
+@mixin p_absolute($x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
+  @include position(absolute, $x_axis, $x_value, $y_axis, $y_value, $width, $height);
+}
+
+@mixin p_fixed($x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
+  @include position(fixed, $x_axis, $x_value, $y_axis, $y_value, $width, $height);
+}
+
 @mixin flex($direction: row, $justify-content: center, $align-items: center) {
   display: flex;
   flex-direction: $direction;
@@ -40,21 +54,26 @@
 @mixin text-light {
   color: variables.$gray-1;
 }
+
 @mixin text-white {
   color: variables.$white;
 }
+
 @mixin font_rajdhani($font-weight: 500) {
   font-family: "Rajdhani", sans-serif;
   font-weight: $font-weight;
 }
+
 @mixin font_spaceGrotesk($font-weight: 400) {
   font-family: "Rajdhani", sans-serif;
   font-weight: $font-weight;
 }
+
 @mixin padding_x($left: 0, $right: 0) {
   padding-left: $left;
   padding-right: $right;
 }
+
 @mixin padding_y($top: 0, $bottom: 0) {
   padding-top: $top;
   padding-bottom: $bottom;
@@ -70,6 +89,7 @@
     transform: translateX(0);
   }
 }
+
 @mixin animation-fade-in() {
   animation: fade-in 0.4s ease-in-out forwards;
 }

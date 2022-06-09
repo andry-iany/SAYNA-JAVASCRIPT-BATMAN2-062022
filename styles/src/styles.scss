@@ -165,11 +165,8 @@ header {
 }
 
 .popup {
-  position: fixed;
+  @include mixins.p_fixed($y_value: 50%);
   z-index: 100;
-  top: 50%;
-  left: 0;
-  width: 100%;
   display: none;
 
   &-shown {
@@ -180,6 +177,9 @@ header {
     position: relative;
   }
 
+  // the background of the popup is obtained by superposing "$black-1" and "$grad-blue-transp-2", so we use
+  // - ".popup-content::after" to get the "$black-1" layer
+  // - ".popup-body" to get the "$grad-blue-transp-2" layer
   &-content::after,
   &-body {
     @include mixins.flex($direction: column);
@@ -190,8 +190,6 @@ header {
   }
 
   &-content::after {
-    // the background of the popup is obtained by superposing "$black-1" and "$grad-blue-transp-2"
-    // so we need this to get the "$black-1" layer
     content: "";
     z-index: -1;
     background: variables.$black-1;
@@ -205,12 +203,8 @@ header {
 }
 
 aside {
-  position: fixed;
+  @include mixins.p_fixed($y_value: 50%);
   z-index: 99;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
 
   .container {
     position: relative;
