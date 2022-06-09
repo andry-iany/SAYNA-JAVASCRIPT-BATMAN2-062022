@@ -450,19 +450,19 @@ aside .icon-aside img {
   width: 100%;
   display: block;
   background-color: transparent;
-  border-bottom: 1px solid #c4c4c4;
 }
 .section-form .input-block:-ms-input-placeholder {
   width: 100%;
   display: block;
   background-color: transparent;
-  border-bottom: 1px solid #c4c4c4;
 }
 .section-form .input-block,
 .section-form .input-block::placeholder {
   width: 100%;
   display: block;
   background-color: transparent;
+}
+.section-form .input-block {
   border-bottom: 1px solid #c4c4c4;
 }
 @media screen and (min-width: 768px) {
@@ -480,6 +480,11 @@ aside .icon-aside img {
 }
 .section-form .radio-group input[type=radio] {
   display: none;
+}
+.section-form #message {
+  min-height: 1.5rem;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .carousel {
@@ -569,7 +574,7 @@ aside .icon-aside img {
   display: block;
 }
 .video-wrapper #link-ba:hover {
-  box-shadow: 0 0 25px 0 #c4c4c4;
+  box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.4);
 }
 .video-wrapper #link-ba:hover #icon-player {
   display: block;

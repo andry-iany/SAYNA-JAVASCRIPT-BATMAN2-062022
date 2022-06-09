@@ -340,6 +340,9 @@ aside {
       width: 100%;
       display: block;
       background-color: transparent;
+    }
+
+    .input-block {
       @include mixins.border($color: variables.$gray-1, $width: 1px);
     }
 
@@ -357,6 +360,12 @@ aside {
 
     .radio-group input[type="radio"] {
       display: none;
+    }
+
+    #message {
+      min-height: 1.5rem;
+      min-width: 100%;
+      max-width: 100%;
     }
   }
 }
@@ -443,7 +452,7 @@ aside {
   }
 
   #link-ba:hover {
-    box-shadow: 0 0 25px 0 variables.$gray-1;
+    box-shadow: 0 0 2rem 0 variables.$white-2;
   }
 
   #link-ba:hover #icon-player {
