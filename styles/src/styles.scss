@@ -356,10 +356,14 @@ aside {
       @include mixins.flex();
       @include mixins.text-white;
       gap: 1rem;
-    }
 
-    .radio-group input[type="radio"] {
-      display: none;
+      input[type="radio"] {
+        display: none;
+      }
+
+      input[type="radio"]:checked + .btn-bordered {
+        background: variables.$grad-blue-transp;
+      }
     }
 
     #message {

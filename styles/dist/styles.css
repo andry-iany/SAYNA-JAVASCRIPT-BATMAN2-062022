@@ -481,6 +481,9 @@ aside .icon-aside img {
 .section-form .radio-group input[type=radio] {
   display: none;
 }
+.section-form .radio-group input[type=radio]:checked + .btn-bordered {
+  background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
+}
 .section-form #message {
   min-height: 1.5rem;
   min-width: 100%;
