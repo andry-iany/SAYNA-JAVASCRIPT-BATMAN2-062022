@@ -64,9 +64,21 @@
   font-weight: $font-weight;
 }
 
+@mixin font_rajdhani_medium() {
+  @include font_rajdhani(500);
+}
+
 @mixin font_spaceGrotesk($font-weight: 400) {
   font-family: "Rajdhani", sans-serif;
   font-weight: $font-weight;
+}
+
+@mixin font_spaceGrotesk_normal() {
+  @include font_spaceGrotesk(400);
+}
+
+@mixin font_spaceGrotesk_bold() {
+  @include font_spaceGrotesk(700);
 }
 
 @mixin padding_x($left: 0, $right: 0) {

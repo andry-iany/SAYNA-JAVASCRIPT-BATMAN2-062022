@@ -6,7 +6,7 @@
   cursor: pointer;
   font-size: 1.25rem;
   white-space: nowrap;
-  @include mixins.font_rajdhani(500);
+  @include mixins.font_rajdhani_medium;
 
   &-group {
     gap: 1rem 2rem;
@@ -159,7 +159,7 @@ header {
     &-title {
       font-size: 2.25rem;
       margin-bottom: 1.3rem;
-      @include mixins.font_rajdhani(500);
+      @include mixins.font_rajdhani_medium;
     }
   }
 }
@@ -268,7 +268,7 @@ aside {
     text-align: center;
     text-transform: uppercase;
     @include mixins.padding_y(2rem, 2rem);
-    @include mixins.font_spaceGrotesk(700);
+    @include mixins.font_spaceGrotesk_bold;
 
     @include mixins.mq_md {
       text-align: start;
@@ -413,7 +413,7 @@ aside {
   color: variables.$gray-1;
   font-size: 0.75rem;
   margin-bottom: 5rem;
-  @include mixins.font_spaceGrotesk(400);
+  @include mixins.font_spaceGrotesk_normal;
   @include mixins.flex($justify-content: space-between);
 
   @include mixins.mq_sm {
