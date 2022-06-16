@@ -761,12 +761,6 @@ footer .networks {
 .icon-link {
   position: relative;
 }
-.icon-link .img-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-.icon-link:hover .img-hover {
-  opacity: 1;
+.icon-link:hover img {
+  filter: brightness(0) saturate(100%) invert(88%) sepia(74%) saturate(5057%) hue-rotate(359deg) brightness(104%) contrast(106%);
 }/*# sourceMappingURL=styles.css.map */

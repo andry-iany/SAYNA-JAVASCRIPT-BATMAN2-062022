@@ -183,7 +183,12 @@ header {
   &-content::after,
   &-body {
     @include mixins.flex($direction: column);
-    @include mixins.p_absolute($x_value: 50%, $y_value: 50%, $width: 60%, $height: 250px);
+    @include mixins.p_absolute(
+      $x_value: 50%,
+      $y_value: 50%,
+      $width: 60%,
+      $height: 250px
+    );
     max-width: 300px;
     transform: translate(-50%, -50%);
     border-radius: 1rem;
@@ -300,7 +305,12 @@ aside {
   }
 
   &-title #nemesis img {
-    @include mixins.p_absolute($x_value: 100%, $y_axis: bottom, $width: auto, $height: 5.5rem);
+    @include mixins.p_absolute(
+      $x_value: 100%,
+      $y_axis: bottom,
+      $width: auto,
+      $height: 5.5rem
+    );
     transform: translateX(-40%);
   }
 
@@ -498,14 +508,22 @@ aside {
   }
 
   #icon-player {
-    @include mixins.p_absolute($x_value: 50%, $y_value: 50%, $width: auto, $height: auto);
+    @include mixins.p_absolute(
+      $x_value: 50%,
+      $y_value: 50%,
+      $width: auto,
+      $height: auto
+    );
     transform: translate(-50%, -50%);
     display: none;
   }
 }
 
 .quotes {
-  @include mixins.flex($justify-content: space-evenly, $align-items: flex-start);
+  @include mixins.flex(
+    $justify-content: space-evenly,
+    $align-items: flex-start
+  );
   text-align: center;
   padding: 8rem 0;
 
@@ -646,14 +664,8 @@ footer {
 .icon-link {
   position: relative;
 
-  .img-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-  }
-
-  &:hover .img-hover {
-    opacity: 1;
+  &:hover img {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(74%) saturate(5057%)
+      hue-rotate(359deg) brightness(104%) contrast(106%);
   }
 }
