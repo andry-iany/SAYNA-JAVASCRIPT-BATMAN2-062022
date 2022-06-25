@@ -3,9 +3,6 @@
 
 header {
   position: relative;
-  background: url("/assets/illustrations/home/Bathome1.png") no-repeat top
-    center;
-  background-size: cover;
 
   &::after {
     // to provide linear gradient to the bottom of the background image

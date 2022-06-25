@@ -62,15 +62,27 @@ ul {
     }
   }
 
-  &-translucent {
+  &-translucent-red,
+  &-translucent-yellow {
     width: 13rem;
     min-width: max-content;
     padding: 1rem 2rem;
     text-transform: uppercase;
+  }
+
+  &-translucent-red {
     background: variables.$grad-red-transp;
 
     &:hover {
       background: variables.$grad-red-opaque;
+    }
+  }
+
+  &-translucent-yellow {
+    background: variables.$grad-orange-transp;
+
+    &:hover {
+      background: variables.$grad-orange-opaque;
     }
   }
 

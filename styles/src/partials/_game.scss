@@ -1,0 +1,59 @@
+@use "./variables";
+@use "./mixins";
+
+#game {
+  header {
+    background: url("/assets/illustrations/game/Batgame_1.png") no-repeat top
+      center;
+    background-size: cover;
+  }
+
+  .banner {
+    &-wrapper {
+      margin: 0 auto;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    &-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @include mixins.mq_md {
+      &-wrapper {
+        margin: 0 auto 0 0;
+        text-align: left;
+      }
+      &-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+      }
+    }
+    @include mixins.mq_lg {
+      &-title {
+        font-size: 4rem;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .section-title {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  #dark-knight {
+    width: 90%;
+    max-width: 1110px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+  }
+
+  #footer .container {
+    padding-top: 10rem;
+  }
+}

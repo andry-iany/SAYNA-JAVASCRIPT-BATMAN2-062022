@@ -7,6 +7,7 @@ $red-2: #890008;
 $yellow-1: #ffff00;
 $yellow-2: #f8f184;
 $yellow-3: #f8f1840a;
+$orange-1: #b98244;
 $blue: #19587d;
 $white: #ffffff;
 $white-2: rgba(#ffffff, 0.4);
@@ -29,6 +30,17 @@ $grad-blue-transp-2: linear-gradient(
 
 $grad-red-opaque: linear-gradient(90deg, rgba($gray-2, 1), rgba($red-2, 1));
 $grad-red-transp: linear-gradient(90deg, rgba($gray-2, 0.4), rgba($red-2, 0.6));
+
+$grad-orange-opaque: linear-gradient(
+  90deg,
+  rgba($gray-2, 1),
+  rgba($orange-1, 1)
+);
+$grad-orange-transp: linear-gradient(
+  90deg,
+  rgba($gray-2, 0.4),
+  rgba($orange-1, 0.8)
+);
 
 $grad-black: linear-gradient(rgba($black-1, 0), rgba($black-1, 1));
 

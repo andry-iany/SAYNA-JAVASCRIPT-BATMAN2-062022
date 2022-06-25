@@ -1,6 +1,14 @@
 @use "./variables";
 @use "./mixins";
 
+#home {
+  header {
+    background: url("/assets/illustrations/home/Bathome1.png") no-repeat top
+      center;
+    background-size: cover;
+  }
+}
+
 .section {
   @include mixins.mq_md {
     &-left {

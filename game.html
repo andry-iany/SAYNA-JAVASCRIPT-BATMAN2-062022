@@ -13,7 +13,7 @@
     <script defer src="/scripts/app.js"></script>
     <title>Batman T4S | Game</title>
   </head>
-  <body>
+  <body id="game">
     <header id="header">
       <nav class="container nav">
         <div class="nav-wrapper">
@@ -29,23 +29,42 @@
 
       <div class="banner container">
         <div class="banner-wrapper">
-          <p class="banner-description fade-in-hidden">
-            Au nom de ses parents assassinés, Bruce Wayne mène une guerre
-            éternelle contre les criminels de Gotham City. Il est vengeur. Il
-            est la nuit.
-          </p>
-          <h1 class="banner-title fade-in-hidden">Il est Batman.</h1>
-          <div class="btn-group">
-            <a href="#section-cinema" class="btn btn-translucent">
-              Voir le héros
-            </a>
-            <a href="#section-nemesis" class="btn btn-translucent">
-              Les adversaires
-            </a>
-          </div>
+          <h1 class="banner-title fade-in-hidden">
+            Let's play a <br />
+            little game...
+          </h1>
         </div>
       </div>
     </header>
+
+    <!-- It wraps the elements for the game section -->
+    <section id="section-game">
+      <section class="section arrow-down">
+        <div class="container">
+          <img src="/assets/logos/flèche_down_header.png" alt="Arrow down" />
+        </div>
+      </section>
+
+      <section class="section section-left">
+        <div class="container">
+          <h2 class="section-title">
+            <p class="fade-in-hidden">
+              connaissez vous bien le chevalier noir ?
+            </p>
+          </h2>
+          <img
+            src="/assets/illustrations/game/Batgame_2.png"
+            alt=""
+            id="dark-knight"
+          />
+          <div class="btn-group">
+            <button type="button" class="btn btn-translucent-yellow">
+              Démarrer le quizz
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
 
     <footer id="footer">
       <div class="container">

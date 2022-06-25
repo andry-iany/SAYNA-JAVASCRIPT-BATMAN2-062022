@@ -104,17 +104,25 @@ ul {
     align-items: center;
   }
 }
-.btn-translucent {
+.btn-translucent-red, .btn-translucent-yellow {
   width: 13rem;
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
   padding: 1rem 2rem;
   text-transform: uppercase;
+}
+.btn-translucent-red {
   background: linear-gradient(90deg, rgba(237, 222, 191, 0.4), rgba(137, 0, 8, 0.6));
 }
-.btn-translucent:hover {
+.btn-translucent-red:hover {
   background: linear-gradient(90deg, #eddebf, #890008);
+}
+.btn-translucent-yellow {
+  background: linear-gradient(90deg, rgba(237, 222, 191, 0.4), rgba(185, 130, 68, 0.8));
+}
+.btn-translucent-yellow:hover {
+  background: linear-gradient(90deg, #eddebf, #b98244);
 }
 .btn-bordered {
   position: relative;
@@ -256,8 +264,6 @@ ul {
 
 header {
   position: relative;
-  background: url("/assets/illustrations/home/Bathome1.png") no-repeat top center;
-  background-size: cover;
 }
 header::after {
   content: "";
@@ -394,6 +400,11 @@ aside .icon-aside {
 }
 aside .icon-aside img {
   width: 100%;
+}
+
+#home header {
+  background: url("/assets/illustrations/home/Bathome1.png") no-repeat top center;
+  background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -797,4 +808,50 @@ aside .icon-aside img {
 }
 #select .select-option:hover {
   background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
+}
+
+#game header {
+  background: url("/assets/illustrations/game/Batgame_1.png") no-repeat top center;
+  background-size: cover;
+}
+#game .banner-wrapper {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+}
+#game .banner-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media screen and (min-width: 768px) {
+  #game .banner-wrapper {
+    margin: 0 auto 0 0;
+    text-align: left;
+  }
+  #game .banner-title {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #game .banner-title {
+    font-size: 4rem;
+    letter-spacing: 3px;
+  }
+}
+#game .section-title {
+  padding-right: 0;
+  text-align: center;
+}
+#game #dark-knight {
+  width: 90%;
+  max-width: 1110px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+#game #footer .container {
+  padding-top: 10rem;
 }/*# sourceMappingURL=styles.css.map */
