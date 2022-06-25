@@ -110,11 +110,11 @@ ul {
   }
   @include mixins.mq_lg {
     padding: 0 4rem;
-    max-width: calc(100vw - 10rem);
+    max-width: calc(100vw - 8rem);
   }
   @include mixins.mq_xl {
     padding: 0 4.5rem;
-    max-width: calc(100vw - 14rem);
+    max-width: calc(100vw - 10rem);
   }
 }
 

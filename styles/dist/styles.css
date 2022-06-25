@@ -154,13 +154,13 @@ ul {
 @media screen and (min-width: 992px) {
   .container {
     padding: 0 4rem;
-    max-width: calc(100vw - 10rem);
+    max-width: calc(100vw - 8rem);
   }
 }
 @media screen and (min-width: 1110px) {
   .container {
     padding: 0 4.5rem;
-    max-width: calc(100vw - 14rem);
+    max-width: calc(100vw - 10rem);
   }
 }
 
@@ -399,11 +399,11 @@ aside .icon-aside img {
 @media screen and (min-width: 768px) {
   .section-left .section-title,
 .section-left .section-text {
-    padding-right: 4rem;
+    padding-right: 6rem;
   }
   .section-right .section-title,
 .section-right .section-text {
-    padding-left: 4rem;
+    padding-left: 6rem;
   }
 }
 .section.arrow-down .container {
