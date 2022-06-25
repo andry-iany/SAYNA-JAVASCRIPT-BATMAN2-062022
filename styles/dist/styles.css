@@ -256,7 +256,7 @@ ul {
 
 header {
   position: relative;
-  background: url("/assets/illustrations/Bathome1.png") no-repeat top center;
+  background: url("/assets/illustrations/home/Bathome1.png") no-repeat top center;
   background-size: cover;
 }
 header::after {
