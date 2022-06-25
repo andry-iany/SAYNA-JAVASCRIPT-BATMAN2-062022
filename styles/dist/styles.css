@@ -227,9 +227,11 @@ header .links {
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
+  gap: 3rem;
 }
 header .link {
   position: relative;
+  text-transform: uppercase;
 }
 header .link:hover::after, header .link-active::after {
   content: "";
