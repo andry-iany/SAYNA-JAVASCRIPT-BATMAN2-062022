@@ -1,0 +1,215 @@
+@use "./variables";
+@use "./mixins";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a,
+a:active,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  scroll-behavior: smooth;
+  background-color: variables.$black-1;
+  min-width: variables.$min-width;
+}
+
+body {
+  color: variables.$white;
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  outline: none;
+  border: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  @include mixins.font_rajdhani_medium;
+
+  &-group {
+    gap: 1rem 2rem;
+    @include mixins.flex($direction: column);
+
+    @include mixins.mq_md {
+      @include mixins.flex($direction: row);
+    }
+  }
+
+  &-translucent {
+    width: 13rem;
+    min-width: max-content;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    background: variables.$grad-red-transp;
+
+    &:hover {
+      background: variables.$grad-red-opaque;
+    }
+  }
+
+  &-bordered {
+    position: relative;
+    border: 1px solid;
+    padding: 0.5rem 1rem;
+    border-image: variables.$grad-blue-transp 1;
+
+    &:hover {
+      background: variables.$grad-blue-transp;
+    }
+  }
+}
+
+.fade-in-hidden {
+  // hide the element to be animated before the animation actually occurs
+  opacity: 0;
+}
+
+.fade-in-shown {
+  @include mixins.animation-fade-in();
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: calc(100vw - 4rem);
+  @include mixins.border(left);
+  @include mixins.border(right);
+
+  @include mixins.mq_md {
+    padding: 0 3rem;
+    max-width: calc(100vw - 6rem);
+  }
+  @include mixins.mq_lg {
+    padding: 0 4rem;
+    max-width: calc(100vw - 10rem);
+  }
+  @include mixins.mq_xl {
+    padding: 0 4.5rem;
+    max-width: calc(100vw - 14rem);
+  }
+}
+
+.logo {
+  height: 2.5rem;
+  display: inline-block;
+
+  @include mixins.mq_md {
+    height: 3rem;
+  }
+  @include mixins.mq_lg {
+    height: 3.5rem;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.popup {
+  @include mixins.p_fixed($y_value: 50%);
+  z-index: 100;
+  display: none;
+
+  &-shown {
+    display: block;
+  }
+
+  &-content {
+    position: relative;
+  }
+
+  // the background of the popup is obtained by superposing "$black-1" and "$grad-blue-transp-2", so we use
+  // - ".popup-content::after" to get the "$black-1" layer
+  // - ".popup-body" to get the "$grad-blue-transp-2" layer
+  &-content::after,
+  &-body {
+    @include mixins.flex($direction: column);
+    @include mixins.p_absolute(
+      $x_value: 50%,
+      $y_value: 50%,
+      $width: 60%,
+      $height: 250px
+    );
+    max-width: 300px;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+  }
+
+  &-content::after {
+    content: "";
+    z-index: -1;
+    background: variables.$black-1;
+  }
+
+  &-body {
+    background: variables.$grad-blue-transp-2;
+    text-transform: uppercase;
+    box-shadow: 0 0 2rem 0 variables.$black-3;
+  }
+}
+
+.icon {
+  &-small {
+    height: 1.3rem;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &-medium {
+    height: 2.8rem;
+  }
+
+  &-large {
+    width: 2.8rem;
+
+    @include mixins.mq_md {
+      width: 3.5rem;
+    }
+    @include mixins.mq_lg {
+      width: 5rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.icon-link {
+  position: relative;
+
+  &:hover img {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(74%) saturate(5057%)
+      hue-rotate(359deg) brightness(104%) contrast(106%);
+  }
+}

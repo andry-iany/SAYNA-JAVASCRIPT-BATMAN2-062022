@@ -16,6 +16,26 @@
   font-weight: 400;
   font-style: normal;
 }
+@-webkit-keyframes fade-in {
+  0% {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -62,27 +82,6 @@ ul {
   list-style-type: none;
 }
 
-@-webkit-keyframes fade-in {
-  0% {
-    transform: translateX(-3rem);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    transform: translateX(-3rem);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 .btn {
   cursor: pointer;
   font-size: 1.25rem;
@@ -183,6 +182,79 @@ ul {
   height: 100%;
 }
 
+.popup {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+  display: none;
+}
+.popup-shown {
+  display: block;
+}
+.popup-content {
+  position: relative;
+}
+.popup-content::after, .popup-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  height: 250px;
+  max-width: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+}
+.popup-content::after {
+  content: "";
+  z-index: -1;
+  background: #000;
+}
+.popup-body {
+  background: linear-gradient(165deg, rgba(237, 222, 191, 0.6), rgba(25, 88, 125, 0.6));
+  text-transform: uppercase;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.icon-small {
+  height: 1.3rem;
+}
+.icon-small img {
+  height: 100%;
+}
+.icon-medium {
+  height: 2.8rem;
+}
+.icon-large {
+  width: 2.8rem;
+}
+@media screen and (min-width: 768px) {
+  .icon-large {
+    width: 3.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .icon-large {
+    width: 5rem;
+  }
+}
+.icon-large img {
+  width: 100%;
+}
+
+.icon-link {
+  position: relative;
+}
+.icon-link:hover img {
+  filter: brightness(0) saturate(100%) invert(88%) sepia(74%) saturate(5057%) hue-rotate(359deg) brightness(104%) contrast(106%);
+}
+
 header {
   position: relative;
   background: url("/assets/illustrations/Bathome1.png") no-repeat top center;
@@ -273,44 +345,19 @@ header .banner-title {
   font-weight: 500;
 }
 
-.popup {
-  position: fixed;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: auto;
-  z-index: 100;
-  display: none;
+footer .container {
+  padding-bottom: 8rem;
 }
-.popup-shown {
-  display: block;
-}
-.popup-content {
-  position: relative;
-}
-.popup-content::after, .popup-body {
+footer .flex {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 60%;
-  height: 250px;
-  max-width: 300px;
-  transform: translate(-50%, -50%);
-  border-radius: 1rem;
+  gap: 0.5rem;
 }
-.popup-content::after {
-  content: "";
-  z-index: -1;
-  background: #000;
-}
-.popup-body {
-  background: linear-gradient(165deg, rgba(237, 222, 191, 0.6), rgba(25, 88, 125, 0.6));
-  text-transform: uppercase;
-  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+footer .networks {
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 aside {
@@ -671,47 +718,6 @@ aside .icon-aside img {
   background-color: #19587d;
 }
 
-footer .container {
-  padding-bottom: 8rem;
-}
-footer .flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-footer .networks {
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.icon-small {
-  height: 1.3rem;
-}
-.icon-small img {
-  height: 100%;
-}
-.icon-medium {
-  height: 2.8rem;
-}
-.icon-large {
-  width: 2.8rem;
-}
-@media screen and (min-width: 768px) {
-  .icon-large {
-    width: 3.5rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .icon-large {
-    width: 5rem;
-  }
-}
-.icon-large img {
-  width: 100%;
-}
-
 #select {
   position: relative;
 }
@@ -758,11 +764,4 @@ footer .networks {
 }
 #select .select-option:hover {
   background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
-}
-
-.icon-link {
-  position: relative;
-}
-.icon-link:hover img {
-  filter: brightness(0) saturate(100%) invert(88%) sepia(74%) saturate(5057%) hue-rotate(359deg) brightness(104%) contrast(106%);
 }/*# sourceMappingURL=styles.css.map */

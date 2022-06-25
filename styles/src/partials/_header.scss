@@ -1,0 +1,79 @@
+@use "./variables";
+@use "./mixins";
+
+header {
+  position: relative;
+  background: url("/assets/illustrations/Bathome1.png") no-repeat top center;
+  background-size: cover;
+
+  &::after {
+    content: "";
+    background: variables.$grad-black;
+    z-index: 1;
+    @include mixins.p_absolute($y_axis: bottom, $height: 4rem);
+  }
+
+  .nav {
+    &.container {
+      @include mixins.border($position: bottom, $width: 0.25rem);
+    }
+
+    &-wrapper {
+      @include mixins.flex($justify-content: space-between);
+      @include mixins.padding_y(2.5rem, 3rem);
+
+      @include mixins.mq_md {
+        @include mixins.padding_y(3rem, 3.5rem);
+      }
+      @include mixins.mq_lg {
+        @include mixins.padding_y(4rem, 4.5rem);
+      }
+    }
+  }
+
+  .links {
+    @include mixins.flex($justify-content: space-between);
+    font-size: 2rem;
+    gap: 3rem;
+  }
+
+  .link {
+    position: relative;
+    text-transform: uppercase;
+
+    &:hover::after,
+    &-active::after {
+      content: "";
+      text-decoration: underline;
+      @include mixins.border(bottom, variables.$white, 2px);
+      @include mixins.p_absolute($y_value: 102%);
+    }
+  }
+
+  .banner {
+    &-wrapper {
+      margin: 0 auto;
+      max-width: 75%;
+      text-align: center;
+      @include mixins.padding_y(4rem, 4rem);
+
+      @include mixins.mq_md {
+        @include mixins.padding_y(6rem, 8rem);
+      }
+      @include mixins.mq_lg {
+        max-width: 60%;
+        @include mixins.padding_y(10rem, 14rem);
+      }
+    }
+
+    &-description {
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      font-size: 2.25rem;
+      margin-bottom: 1.3rem;
+      @include mixins.font_rajdhani_medium;
+    }
+  }
+}

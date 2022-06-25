@@ -1,0 +1,33 @@
+@use "./variables";
+@use "./mixins";
+
+aside {
+  @include mixins.p_fixed($y_value: 50%);
+  z-index: 99;
+
+  .container {
+    position: relative;
+  }
+
+  .networks {
+    @include mixins.flex($direction: column);
+    @include mixins.p_absolute($x_axis: right, $x_value: 0, $width: auto);
+    transform: translate(50%, -50%);
+    gap: 1.5rem;
+  }
+
+  .icon-aside {
+    max-width: 2.8rem;
+
+    @include mixins.mq_md {
+      max-width: 3.5rem;
+    }
+    @include mixins.mq_lg {
+      max-width: 5rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

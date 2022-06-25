@@ -1,0 +1,17 @@
+@use "./mixins";
+
+footer {
+  .container {
+    padding-bottom: 8rem;
+  }
+
+  .flex {
+    @include mixins.flex();
+    gap: 0.5rem;
+  }
+
+  .networks {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+}
