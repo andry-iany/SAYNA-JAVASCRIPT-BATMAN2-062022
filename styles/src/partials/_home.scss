@@ -85,23 +85,71 @@
 
   &-images {
     @include mixins.flex();
-    gap: 4rem;
+    gap: 4rem 2rem;
     flex-wrap: wrap;
     text-align: center;
     padding-bottom: 4rem;
   }
 
-  &-image {
-    display: block;
+  &-image-wrapper {
+    position: relative;
+    width: 330px;
     max-width: 100%;
-    margin-bottom: 1.5rem;
+    &:hover {
+      // the element with this class is being animated in which we also manipulate "transform" property
+      // so we need to make sure the value here takes precedence over that one from the animation
+      transform: scale(1.1) !important;
+      transition: all ease 5s;
+    }
+
+    &:hover .section-image-caption {
+      display: block;
+    }
   }
 
-  &-image-wrapper:hover {
-    // the element with this class is being animated in which we also manipulate "transform" property
-    // so we need to make sure the value here takes precedence over that one from the animation
-    transform: scale(1.1) !important;
-    transition: all ease 5s;
+  &-image {
+    display: block;
+    width: 100%;
+  }
+
+  &-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem 2rem 3rem;
+    background: variables.$yellow-3;
+    display: none;
+
+    > img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 3rem;
+      height: 3rem;
+      transform: translate(50%, -70%);
+    }
+
+    small {
+      font-size: 0.6rem;
+      color: variables.$yellow-1;
+    }
+
+    p {
+      background: variables.$grad-red-transp;
+      padding: 1rem 1.5rem;
+      border-radius: 4rem;
+      font-size: 0.8rem;
+    }
+
+    @include mixins.mq_sm {
+      padding: 2rem 2rem 2rem 4rem;
+
+      > img {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
   }
 
   &-image-full {
