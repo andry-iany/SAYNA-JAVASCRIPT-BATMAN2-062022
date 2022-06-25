@@ -28,22 +28,6 @@
   border-#{$position}: $width solid $color;
 }
 
-@mixin position($type, $x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
-  position: $type;
-  #{$x_axis}: $x_value;
-  #{$y_axis}: $y_value;
-  width: $width;
-  height: $height;
-}
-
-@mixin p_absolute($x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
-  @include position(absolute, $x_axis, $x_value, $y_axis, $y_value, $width, $height);
-}
-
-@mixin p_fixed($x_axis: left, $x_value: 0, $y_axis: top, $y_value: 0, $width: 100%, $height: auto) {
-  @include position(fixed, $x_axis, $x_value, $y_axis, $y_value, $width, $height);
-}
-
 @mixin flex($direction: row, $justify-content: center, $align-items: center) {
   display: flex;
   flex-direction: $direction;

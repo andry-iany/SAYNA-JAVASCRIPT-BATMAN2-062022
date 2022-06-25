@@ -2,7 +2,10 @@
 @use "./mixins";
 
 aside {
-  @include mixins.p_fixed($y_value: 50%);
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
   z-index: 99;
 
   .container {
@@ -11,9 +14,11 @@ aside {
 
   .networks {
     @include mixins.flex($direction: column);
-    @include mixins.p_absolute($x_axis: right, $x_value: 0, $width: auto);
-    transform: translate(50%, -50%);
     gap: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
   }
 
   .icon-aside {

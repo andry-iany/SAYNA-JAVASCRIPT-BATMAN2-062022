@@ -7,10 +7,15 @@ header {
   background-size: cover;
 
   &::after {
+    // to provide linear gradient to the bottom of the background image
     content: "";
     background: variables.$grad-black;
     z-index: 1;
-    @include mixins.p_absolute($y_axis: bottom, $height: 4rem);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
   }
 
   .nav {
@@ -46,7 +51,10 @@ header {
       content: "";
       text-decoration: underline;
       @include mixins.border(bottom, variables.$white, 2px);
-      @include mixins.p_absolute($y_value: 102%);
+      position: absolute;
+      top: 102%;
+      left: 0;
+      width: 100%;
     }
   }
 

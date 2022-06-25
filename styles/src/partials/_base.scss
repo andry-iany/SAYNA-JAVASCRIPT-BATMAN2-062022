@@ -135,7 +135,10 @@ ul {
 }
 
 .popup {
-  @include mixins.p_fixed($y_value: 50%);
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
   z-index: 100;
   display: none;
 
@@ -153,12 +156,11 @@ ul {
   &-content::after,
   &-body {
     @include mixins.flex($direction: column);
-    @include mixins.p_absolute(
-      $x_value: 50%,
-      $y_value: 50%,
-      $width: 60%,
-      $height: 250px
-    );
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 250px;
     max-width: 300px;
     transform: translate(-50%, -50%);
     border-radius: 1rem;
