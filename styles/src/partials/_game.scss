@@ -43,6 +43,10 @@
   .section-title {
     padding-right: 0;
     text-align: center;
+
+    &.progress {
+      padding-bottom: 7rem;
+    }
   }
 
   #dark-knight {
@@ -55,5 +59,73 @@
 
   #footer .container {
     padding-top: 10rem;
+  }
+
+  .section-questions-wrapper {
+    display: grid;
+    grid-template-areas:
+      "top-left top-center top-right"
+      "bottom-left bottom-center bottom-right";
+    grid-template-columns: 4fr 6fr 2fr;
+    grid-template-rows: auto 10rem;
+    gap: 1rem;
+  }
+  .img-top-left {
+    grid-area: top-left;
+    justify-self: center;
+  }
+  .img-bottom-left {
+    grid-area: bottom-left;
+    justify-self: center;
+  }
+  .img-bottom-right {
+    grid-area: bottom-right;
+    transform: translateY(-50%);
+  }
+
+  .content-top-center {
+    grid-area: top-center;
+  }
+  .content-bottom-center {
+    grid-area: bottom-center;
+    display: flex;
+    align-items: center;
+  }
+  .section-questions-options {
+    padding-bottom: 8rem;
+  }
+  .img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .section-questions-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    > p {
+      padding-bottom: 1rem;
+    }
+    .img-wrapper {
+      height: 2rem;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .img-wrapper img[src] {
+      // we always put the markup for the image in its place,
+      // however, we only want to count its width if the image has src attribute
+      height: auto;
+      width: 10rem;
+      max-width: unset;
+      max-height: unset;
+    }
+  }
+
+  .input-group {
+    background-color: variables.$gray-4;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
   }
 }
