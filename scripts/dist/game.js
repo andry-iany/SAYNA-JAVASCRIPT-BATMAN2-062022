@@ -170,7 +170,7 @@ function getPopupTextFromScore(quizz) {
     if (quizz.totalCorrectAnswers === quizz.totalQuestionNbrs) {
         rank = QuizzRank.BEST;
     }
-    else if (quizz.totalCorrectAnswers >= quizz.totalQuestionNbrs * 0.7) {
+    else if (quizz.totalCorrectAnswers >= quizz.totalQuestionNbrs * 0.6) {
         rank = QuizzRank.GOOD;
     }
     else {
