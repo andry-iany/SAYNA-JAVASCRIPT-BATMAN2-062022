@@ -1,5 +1,4 @@
-"use strict";
-// This module contains all shared script
+// This module contains all shared script and some general functions
 // ANIMATION
 const eltsToAnimate = document.querySelectorAll(".fade-in-hidden");
 const observer = new IntersectionObserver(handleIntersecting);
@@ -12,4 +11,12 @@ function handleIntersecting(entries) {
             observer.unobserve(entry.target); // unobserve the element once it's been animated
         }
     }, { root: null });
+}
+export function showPopup() {
+    const popup = document.querySelector(".popup");
+    popup === null || popup === void 0 ? void 0 : popup.classList.add("popup-shown");
+}
+export function hidePopup() {
+    const popup = document.querySelector(".popup");
+    popup === null || popup === void 0 ? void 0 : popup.classList.remove("popup-shown");
 }

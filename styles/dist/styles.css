@@ -204,30 +204,6 @@ ul {
 .popup-content {
   position: relative;
 }
-.popup-content::after, .popup-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60%;
-  height: 250px;
-  max-width: 300px;
-  transform: translate(-50%, -50%);
-  border-radius: 1rem;
-}
-.popup-content::after {
-  content: "";
-  z-index: -1;
-  background: #000;
-}
-.popup-body {
-  background: linear-gradient(165deg, rgba(237, 222, 191, 0.6), rgba(25, 88, 125, 0.6));
-  text-transform: uppercase;
-  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
-}
 
 .icon-small {
   height: 1.3rem;
@@ -405,6 +381,30 @@ aside .icon-aside img {
 #home header {
   background: url("/assets/illustrations/home/Bathome1.png") no-repeat top center;
   background-size: cover;
+}
+#home .popup-content::after, #home .popup-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 250px;
+  max-width: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+}
+#home .popup-content::after {
+  content: "";
+  z-index: -1;
+  background: #000;
+}
+#home .popup-body {
+  background: linear-gradient(165deg, rgba(237, 222, 191, 0.6), rgba(25, 88, 125, 0.6));
+  text-transform: uppercase;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 768px) {

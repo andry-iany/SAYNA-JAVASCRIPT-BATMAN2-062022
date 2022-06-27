@@ -1,4 +1,4 @@
-// This module contains all shared script
+// This module contains all shared script and some general functions
 
 // ANIMATION
 const eltsToAnimate = document.querySelectorAll(".fade-in-hidden");
@@ -16,4 +16,14 @@ function handleIntersecting(entries: IntersectionObserverEntry[]) {
     },
     { root: null }
   );
+}
+
+export function showPopup() {
+  const popup = document.querySelector<HTMLElement>(".popup");
+  popup?.classList.add("popup-shown");
+}
+
+export function hidePopup() {
+  const popup = document.querySelector<HTMLElement>(".popup");
+  popup?.classList.remove("popup-shown");
 }

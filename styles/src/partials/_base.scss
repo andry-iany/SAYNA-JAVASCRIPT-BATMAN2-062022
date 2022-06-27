@@ -161,34 +161,6 @@ ul {
   &-content {
     position: relative;
   }
-
-  // the background of the popup is obtained by superposing "$black-1" and "$grad-blue-transp-2", so we use
-  // - ".popup-content::after" to get the "$black-1" layer
-  // - ".popup-body" to get the "$grad-blue-transp-2" layer
-  &-content::after,
-  &-body {
-    @include mixins.flex($direction: column);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60%;
-    height: 250px;
-    max-width: 300px;
-    transform: translate(-50%, -50%);
-    border-radius: 1rem;
-  }
-
-  &-content::after {
-    content: "";
-    z-index: -1;
-    background: variables.$black-1;
-  }
-
-  &-body {
-    background: variables.$grad-blue-transp-2;
-    text-transform: uppercase;
-    box-shadow: 0 0 2rem 0 variables.$black-3;
-  }
 }
 
 .icon {

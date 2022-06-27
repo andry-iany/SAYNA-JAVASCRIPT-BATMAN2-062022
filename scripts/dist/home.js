@@ -1,16 +1,12 @@
-import "./app.js";
+import { hidePopup, showPopup } from "./app.js";
 // Script for the home page
 // FORM
 const form = document.querySelector(".forms");
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", (event) => {
     event.preventDefault();
     showPopup();
+    setTimeout(() => hidePopup(), 3000);
 });
-function showPopup() {
-    const popup = document.querySelector(".popup");
-    popup === null || popup === void 0 ? void 0 : popup.classList.add("popup-shown");
-    setTimeout(() => popup === null || popup === void 0 ? void 0 : popup.classList.remove("popup-shown"), 3000);
-}
 // CUSTOM SELECT
 const select = document.querySelector("#select");
 select === null || select === void 0 ? void 0 : select.addEventListener("click", (event) => {

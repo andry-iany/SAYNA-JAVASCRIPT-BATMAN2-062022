@@ -1,4 +1,4 @@
-import "./app.js";
+import { hidePopup, showPopup } from "./app.js";
 
 // Script for the home page
 
@@ -7,13 +7,8 @@ const form = document.querySelector<HTMLFormElement>(".forms");
 form?.addEventListener("submit", (event: SubmitEvent) => {
   event.preventDefault();
   showPopup();
+  setTimeout(() => hidePopup(), 3000);
 });
-
-function showPopup() {
-  const popup = document.querySelector<HTMLElement>(".popup");
-  popup?.classList.add("popup-shown");
-  setTimeout(() => popup?.classList.remove("popup-shown"), 3000);
-}
 
 // CUSTOM SELECT
 const select = document.querySelector<HTMLElement>("#select");
