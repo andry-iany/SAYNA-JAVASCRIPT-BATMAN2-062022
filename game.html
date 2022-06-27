@@ -37,96 +37,104 @@
       </div>
     </header>
 
-    <!-- It wraps the elements for the game section -->
     <section id="section-game">
-      <section class="section arrow-down">
-        <div class="container">
-          <img src="/assets/logos/flèche_down_header.png" alt="Arrow down" />
-        </div>
-      </section>
-
-      <section class="section section-left">
-        <div class="container">
-          <h2 class="section-title">
-            <p class="fade-in-hidden">
-              connaissez vous bien le chevalier noir ?
-            </p>
-          </h2>
-          <img
-            src="/assets/illustrations/game/Batgame_2.png"
-            alt=""
-            id="dark-knight"
-          />
-          <div class="btn-group">
-            <button
-              id="btn-start-quizz"
-              type="button"
-              class="btn btn-translucent-yellow"
-            >
-              Démarrer le quizz
-            </button>
+      <!-- It wraps the elements for the game section -->
+      <div class="section-game-wrapper">
+        <section class="section arrow-down">
+          <div class="container">
+            <img src="/assets/logos/flèche_down_header.png" alt="Arrow down" />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Template for the quizz -->
+        <section class="section section-left">
+          <div class="container">
+            <h2 class="section-title">
+              <p class="fade-in-hidden">
+                connaissez vous bien le chevalier noir ?
+              </p>
+            </h2>
+            <img
+              src="/assets/illustrations/game/Batgame_2.png"
+              alt=""
+              id="dark-knight"
+            />
+            <div class="btn-group">
+              <button
+                id="btn-start-quizz"
+                type="button"
+                class="btn btn-translucent-yellow"
+              >
+                Démarrer le quizz
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Template for the quizz: we generalized the layout for the quizz so we'll just fill the appropriate slot -->
       <template id="game-template">
         <section class="section section-left">
           <div class="container">
-            <h2 class="section-title progress">1/15</h2>
+            <h2 class="section-title progress">
+              <span class="current">
+                <!-- HERE GOES THE CURRENT QUESTION NUMBER -->
+              </span>
+              /
+              <span class="total">
+                <!-- HERE GOES THE TOTAL QUESTION NUMBER -->
+              </span>
+            </h2>
 
             <div class="section-questions-wrapper">
               <div class="content-top-center">
                 <div class="section-questions-question">
                   <p>
-                    Qui est Jonathan Crane ? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quae, dolores!
+                    <!-- HERE GOES THE QUESTION -->
                   </p>
                   <div class="img-wrapper img-center-top">
-                    <img
-                      src="/assets/illustrations/game/Batgame_15.png"
-                      alt=""
-                    />
+                    <!-- THIS IMAGE IS POSITIONED NEXT TO THE QUESTION -->
+                    <img alt="" />
                   </div>
                 </div>
 
                 <div class="section-questions-options">
-                  <div class="input-group">
-                    <input type="checkbox" />
-                    <label>Le Sphinx</label>
-                  </div>
-                  <div class="input-group">
-                    <input type="checkbox" />
-                    <label>Saphir</label>
-                  </div>
-                  <div class="input-group">
-                    <input type="checkbox" />
-                    <label>Le Joker</label>
-                  </div>
+                  <template>
+                    <!-- This is one option for the question -->
+                    <div class="input-group">
+                      <input type="checkbox" />
+                      <label>
+                        <!-- HERE GOES THE TEXT OF THE OPTION -->
+                      </label>
+                    </div>
+                  </template>
                 </div>
               </div>
 
               <div class="content-bottom-center">
                 <button
-                  id="btn-next-quizz"
                   type="button"
+                  id="btn-next-quizz"
                   class="btn btn-translucent-yellow"
                 >
-                  Question suivante
+                  <!-- HERE GOES THE TEXT FOR THE BUTTON -->
                 </button>
                 <div class="img-wrapper img-bottom-center">
-                  <img src="/assets/illustrations/game/Batgame_13.png" alt="" />
+                  <!-- THIS IMAGE IS POSITIONED NEXT TO THE "question suivante" BUTTON -->
+                  <img alt="" />
                 </div>
               </div>
 
               <div class="img-wrapper img-top-left">
-                <img src="/assets/illustrations/game/Batgame_8.png" alt="" />
+                <!-- THIS IMAGE GOES AT THE TOP LEFT OF THE QUIZZ -->
+                <img alt="" />
               </div>
               <div class="img-wrapper img-bottom-left">
-                <img src="/assets/illustrations/game/Batgame_9.png" alt="" />
+                <!-- THIS IMAGE GOES AT THE BOTTOM LEFT OF THE QUIZZ -->
+                <img alt="" />
               </div>
               <div class="img-wrapper img-bottom-right">
-                <img src="/assets/illustrations/game/Batgame_9-1.png" alt="" />
+                <!-- THIS IMAGE GOES AT THE BOTTOM RIGHT OF THE QUIZZ -->
+                <img alt="" />
               </div>
             </div>
           </div>

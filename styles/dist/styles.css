@@ -915,4 +915,7 @@ aside .icon-aside img {
   background-color: #898888;
   margin-bottom: 1rem;
   padding: 0.5rem;
+}
+#game .input-group label {
+  margin-left: 0.5rem;
 }/*# sourceMappingURL=styles.css.map */
