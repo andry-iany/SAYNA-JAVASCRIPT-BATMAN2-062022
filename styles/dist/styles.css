@@ -122,7 +122,7 @@ ul {
   background: linear-gradient(90deg, rgba(237, 222, 191, 0.4), rgba(185, 130, 68, 0.8));
 }
 .btn-translucent-yellow:hover {
-  background: linear-gradient(90deg, #eddebf, #b98244);
+  background: linear-gradient(90deg, rgba(237, 222, 191, 0.7), #b98244);
 }
 .btn-bordered {
   position: relative;
@@ -196,12 +196,15 @@ ul {
   left: 0;
   width: 100%;
   z-index: 100;
+  transform: translateY(-50%);
   display: none;
 }
 .popup-shown {
   display: block;
 }
 .popup-content {
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -918,4 +921,38 @@ aside .icon-aside img {
 }
 #game .input-group label {
   margin-left: 0.5rem;
+}
+#game .popup-content {
+  background: linear-gradient(103deg, #665228, #9f682a);
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4rem 2rem;
+  box-shadow: 0 0 10rem 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+#game .popup-close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 0.75rem;
+  cursor: pointer;
+}
+#game .popup-title {
+  margin-bottom: 3.5rem;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+}
+#game .popup-title::after {
+  content: "";
+  border-bottom: 2px solid #ffffff;
+  position: absolute;
+  top: 102%;
+  left: 0;
+  width: 100%;
+}
+#game .popup-body {
+  margin-bottom: 3.5rem;
 }/*# sourceMappingURL=styles.css.map */

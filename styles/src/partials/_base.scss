@@ -152,6 +152,7 @@ ul {
   left: 0;
   width: 100%;
   z-index: 100;
+  transform: translateY(-50%);
   display: none;
 
   &-shown {
@@ -159,6 +160,8 @@ ul {
   }
 
   &-content {
+    max-height: 90vh;
+    overflow-y: auto;
     position: relative;
   }
 }

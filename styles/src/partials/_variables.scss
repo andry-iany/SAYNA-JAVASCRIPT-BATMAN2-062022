@@ -34,7 +34,7 @@ $grad-red-transp: linear-gradient(90deg, rgba($gray-2, 0.4), rgba($red-2, 0.6));
 
 $grad-orange-opaque: linear-gradient(
   90deg,
-  rgba($gray-2, 1),
+  rgba($gray-2, 0.7),
   rgba($orange-1, 1)
 );
 $grad-orange-transp: linear-gradient(
@@ -42,6 +42,8 @@ $grad-orange-transp: linear-gradient(
   rgba($gray-2, 0.4),
   rgba($orange-1, 0.8)
 );
+
+$grad-orange-opaque-2: linear-gradient(103deg, #665228, #9f682a);
 
 $grad-black: linear-gradient(rgba($black-1, 0), rgba($black-1, 1));
 

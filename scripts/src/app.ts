@@ -18,6 +18,7 @@ function handleIntersecting(entries: IntersectionObserverEntry[]) {
   );
 }
 
+// POPUP
 export function showPopup() {
   const popup = document.querySelector<HTMLElement>(".popup");
   popup?.classList.add("popup-shown");
@@ -26,4 +27,17 @@ export function showPopup() {
 export function hidePopup() {
   const popup = document.querySelector<HTMLElement>(".popup");
   popup?.classList.remove("popup-shown");
+}
+
+// we want to always close the popup if the popup-close-btn is clicked
+window.addEventListener("click", (event: Event) => {
+  const target = event.target as HTMLElement;
+  if (!target) return;
+  else if (isPopupCloseBtn(target)) {
+    hidePopup();
+  }
+});
+
+export function isPopupCloseBtn(elt: HTMLElement) {
+  return elt.classList.contains("popup-close-btn");
 }

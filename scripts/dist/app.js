@@ -12,6 +12,7 @@ function handleIntersecting(entries) {
         }
     }, { root: null });
 }
+// POPUP
 export function showPopup() {
     const popup = document.querySelector(".popup");
     popup === null || popup === void 0 ? void 0 : popup.classList.add("popup-shown");
@@ -19,4 +20,16 @@ export function showPopup() {
 export function hidePopup() {
     const popup = document.querySelector(".popup");
     popup === null || popup === void 0 ? void 0 : popup.classList.remove("popup-shown");
+}
+// we want to always close the popup if the popup-close-btn is clicked
+window.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!target)
+        return;
+    else if (isPopupCloseBtn(target)) {
+        hidePopup();
+    }
+});
+export function isPopupCloseBtn(elt) {
+    return elt.classList.contains("popup-close-btn");
 }

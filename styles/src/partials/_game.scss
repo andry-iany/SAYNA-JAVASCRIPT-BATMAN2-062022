@@ -132,4 +132,43 @@
   .input-group label {
     margin-left: 0.5rem;
   }
+
+  .popup {
+    &-content {
+      background: variables.$grad-orange-opaque-2;
+      width: 80%;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 4px;
+      padding: 4rem 2rem;
+      box-shadow: 0 0 10rem 0 variables.$black-3;
+      position: relative;
+    }
+    &-close-btn {
+      position: absolute;
+      right: 1rem;
+      top: 0.75rem;
+      cursor: pointer;
+    }
+    &-title {
+      margin-bottom: 3.5rem;
+      display: inline-block;
+      position: relative;
+      text-transform: uppercase;
+
+      &::after {
+        // we use the ::after to be able to add some spaces between the text and the underline
+        content: "";
+        border-bottom: 2px solid #ffffff;
+        position: absolute;
+        top: 102%;
+        left: 0;
+        width: 100%;
+      }
+    }
+    &-body {
+      margin-bottom: 3.5rem;
+    }
+  }
 }

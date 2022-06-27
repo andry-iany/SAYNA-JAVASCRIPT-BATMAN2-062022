@@ -1,19 +1,19 @@
-import "./app.js";
+import { hidePopup, showPopup, isPopupCloseBtn } from "./app.js";
 import { quizz as quizzData } from "./data.js";
-import Quizz from "./Quizz.js";
+import Quizz, { QuizzRank, quizzMessages } from "./Quizz.js";
 
 // ******************************
 // TODO: refactor this later
-const quizz = new Quizz(quizzData);
+let quizz = new Quizz(quizzData);
 // ******************************
 
 // script for the game page
-const sectionGame = document.querySelector<HTMLElement>("#section-game");
-sectionGame?.addEventListener("click", (event: Event) => {
+window.addEventListener("click", (event: Event) => {
   const target = event.target as HTMLElement;
 
   if (!target) return;
   else if (isBtnStartQuizz(target)) {
+    hidePopup();
     startQuizz();
   } else if (isBtnNextQuizz(target)) {
     accumulateResult();
@@ -21,6 +21,8 @@ sectionGame?.addEventListener("click", (event: Event) => {
   } else if (isBtnShowResultQuizz(target)) {
     accumulateResult();
     showResultQuizz();
+  } else if (isPopupCloseBtn(target)) {
+    window.location.reload();
   }
 });
 
@@ -35,10 +37,21 @@ function isBtnShowResultQuizz(element: HTMLElement) {
 }
 
 function startQuizz() {
+  resetQuizzStateAndElement();
+
   // we want to create the skeleton of the quizz from template...
   buildQuizzSkeleton();
   // ...before populating it with data
   showNextQuizz();
+}
+
+function resetQuizzStateAndElement() {
+  const gameWrapper = document.querySelector<HTMLElement>(
+    ".section-game-wrapper"
+  );
+  if (!gameWrapper) return;
+  removeAllChildrenFromElement(gameWrapper);
+  quizz = new Quizz(quizzData);
 }
 
 function buildQuizzSkeleton() {
@@ -168,5 +181,33 @@ function accumulateResult() {
 }
 
 function showResultQuizz() {
-  alert(`You got ${quizz.totalCorrectAnswers} correct answers.`);
+  buildPopup();
+  showPopup();
+}
+
+function buildPopup() {
+  const popupText = getPopupTextFromScore(quizz);
+  if (!popupText) return;
+
+  const popupTitle = document.querySelector<HTMLElement>(".popup-title");
+  if (popupTitle) {
+    popupTitle.textContent = `${quizz.totalCorrectAnswers}/${quizz.totalQuestionNbrs} ${popupText.title}`;
+  }
+
+  const popupBody = document.querySelector<HTMLElement>(".popup-body");
+  if (popupBody) {
+    popupBody.textContent = popupText.body;
+  }
+}
+
+function getPopupTextFromScore(quizz: Quizz) {
+  let rank: QuizzRank;
+  if (quizz.totalCorrectAnswers === quizz.totalQuestionNbrs) {
+    rank = QuizzRank.BEST;
+  } else if (quizz.totalCorrectAnswers >= quizz.totalQuestionNbrs * 0.7) {
+    rank = QuizzRank.GOOD;
+  } else {
+    rank = QuizzRank.BAD;
+  }
+  return quizzMessages.find((qm) => qm.rank === rank);
 }
