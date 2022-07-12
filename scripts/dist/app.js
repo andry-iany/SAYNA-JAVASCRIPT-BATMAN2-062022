@@ -1,7 +1,9 @@
 // This module contains all shared script and some general functions
 // ANIMATION
 const eltsToAnimate = document.querySelectorAll(".fade-in-hidden");
-const observer = new IntersectionObserver(handleIntersecting);
+const observer = new IntersectionObserver(handleIntersecting, {
+    threshold: 0.5,
+});
 // register observer to trigger animation when the element is visible
 eltsToAnimate.forEach((elt) => observer.observe(elt));
 function handleIntersecting(entries) {
@@ -10,7 +12,7 @@ function handleIntersecting(entries) {
             entry.target.classList.replace("fade-in-hidden", "fade-in-shown");
             observer.unobserve(entry.target); // unobserve the element once it's been animated
         }
-    }, { root: null });
+    });
 }
 // POPUP
 export function showPopup() {
