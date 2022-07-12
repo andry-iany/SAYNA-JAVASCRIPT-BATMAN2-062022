@@ -98,13 +98,22 @@ ul {
   }
 }
 
-.fade-in-hidden {
+.fade-in-hidden,
+.slide-in-hidden {
+  color: red !important;
   // hide the element to be animated before the animation actually occurs
   opacity: 0;
 }
 
 .fade-in-shown {
-  @include mixins.animation-fade-in();
+  @include mixins.animation-fade-in;
+}
+
+.slide-in-to-right-shown {
+  @include mixins.animation-slide-in-to-right();
+}
+.slide-in-to-left-shown {
+  @include mixins.animation-slide-in-to-left();
 }
 
 .container {

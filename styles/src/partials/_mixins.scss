@@ -77,7 +77,31 @@
 
 @keyframes fade-in {
   0% {
-    transform: translateX(-3rem);
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@mixin animation-fade-in {
+  animation: fade-in 0.8s ease-in-out forwards;
+}
+
+@keyframes slide-in-to-left {
+  0% {
+    transform: translateX(30vw);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-in-to-right {
+  0% {
+    transform: translateX(-30vw);
     opacity: 0;
   }
   100% {
@@ -86,6 +110,12 @@
   }
 }
 
-@mixin animation-fade-in() {
-  animation: fade-in 0.4s ease-in-out forwards;
+@mixin animation-slide-in($direction: left) {
+  animation: "slide-in-to-#{$direction}" 0.8s ease-in-out forwards;
+}
+@mixin animation-slide-in-to-right() {
+  @include animation-slide-in(right);
+}
+@mixin animation-slide-in-to-left() {
+  @include animation-slide-in(left);
 }

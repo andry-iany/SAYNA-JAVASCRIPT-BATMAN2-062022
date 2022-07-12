@@ -1,6 +1,7 @@
 // This module contains all shared script and some general functions
 // ANIMATION
-const eltsToAnimate = document.querySelectorAll(".fade-in-hidden");
+const eltsToAnimate = document.querySelectorAll(".slide-in-hidden, .fade-in-hidden");
+console.log(Array.from(eltsToAnimate));
 const observer = new IntersectionObserver(handleIntersecting, {
     threshold: 0.5,
 });
@@ -8,11 +9,27 @@ const observer = new IntersectionObserver(handleIntersecting, {
 eltsToAnimate.forEach((elt) => observer.observe(elt));
 function handleIntersecting(entries) {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.replace("fade-in-hidden", "fade-in-shown");
-            observer.unobserve(entry.target); // unobserve the element once it's been animated
+        if (!entry.isIntersecting)
+            return;
+        const target = entry.target;
+        console.log(target.classList, isToFade(target));
+        if (isToFade(target)) {
+            target.classList.replace("fade-in-hidden", "fade-in-shown");
         }
+        else if (isToSlide(target)) {
+            const slideDirection = target.classList.contains("slide-in-to-left")
+                ? "left"
+                : "right";
+            target.classList.replace("slide-in-hidden", `slide-in-to-${slideDirection}-shown`);
+        }
+        observer.unobserve(target); // unobserve the element once it's been animated
     });
+}
+function isToFade(elt) {
+    return elt.classList.contains("fade-in-hidden");
+}
+function isToSlide(elt) {
+    return elt.classList.contains("slide-in-hidden");
 }
 // POPUP
 export function showPopup() {
