@@ -2,11 +2,8 @@ import { hidePopup, showPopup, isPopupCloseBtn } from "./app.js";
 import Quizz, { QuizzRank, quizzMessages } from "./Quizz.js";
 // the api to fetch questions are not working, so we hardcode these data for now
 import { quizz as quizzData } from "./data.js";
-// ******************************
-// TODO: refactor this later
-let quizz = new Quizz(quizzData);
-// ******************************
 // script for the game page
+let quizz = new Quizz(quizzData);
 window.addEventListener("click", (event) => {
     const target = event.target;
     if (!target)
