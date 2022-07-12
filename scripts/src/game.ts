@@ -1,6 +1,8 @@
 import { hidePopup, showPopup, isPopupCloseBtn } from "./app.js";
-import { quizz as quizzData } from "./data.js";
 import Quizz, { QuizzRank, quizzMessages } from "./Quizz.js";
+
+// the api to fetch questions are not working, so we hardcode these data for now
+import { quizz as quizzData } from "./data.js";
 
 // ******************************
 // TODO: refactor this later
