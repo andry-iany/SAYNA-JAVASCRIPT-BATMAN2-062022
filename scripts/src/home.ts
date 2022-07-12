@@ -1,74 +1,79 @@
 import { hidePopup, showPopup } from "./app.js";
 
 // Script for the home page
+setupForm();
+setupCustomSelect();
+setupJusticeLeagueImagesSlideShow();
 
 // FORM
-const form = document.querySelector<HTMLFormElement>(".forms");
-form?.addEventListener("submit", (event: SubmitEvent) => {
-  event.preventDefault();
-  showPopup();
-  setTimeout(() => hidePopup(), 3000);
-});
+function setupForm() {
+  const form = document.querySelector<HTMLFormElement>(".forms");
+  form?.addEventListener("submit", (event: SubmitEvent) => {
+    event.preventDefault();
+    showPopup();
+    setTimeout(() => hidePopup(), 3000);
+  });
+}
 
 // CUSTOM SELECT
-const select = document.querySelector<HTMLElement>("#select");
+function setupCustomSelect() {
+  const select = document.querySelector<HTMLElement>("#select");
 
-select?.addEventListener("click", (event: Event) => {
-  const target = event.target as HTMLElement;
+  select?.addEventListener("click", (event: Event) => {
+    const target = event.target as HTMLElement;
 
-  if (!target) return;
+    if (!target) return;
 
-  // visible option: refers to the option currently selected
-  if (isVisibleOptionElement(target)) {
-    showOrHideOptions();
-  } else if (isOptionElement(target)) {
-    selectOption(target);
+    // visible option: refers to the option currently selected
+    if (isVisibleOptionElement(target)) {
+      showOrHideOptions();
+    } else if (isOptionElement(target)) {
+      selectOption(target);
+    }
+  });
+
+  function isVisibleOptionElement(element: HTMLElement) {
+    return element.closest(".select-option-visible");
   }
-});
 
-function isVisibleOptionElement(element: HTMLElement) {
-  return element.closest(".select-option-visible");
-}
+  function showOrHideOptions() {
+    select?.classList.toggle("select-shown");
+  }
 
-function showOrHideOptions() {
-  select?.classList.toggle("select-shown");
-}
+  function isOptionElement(element: HTMLElement) {
+    return element?.classList.contains("select-option");
+  }
 
-function isOptionElement(element: HTMLElement) {
-  return element?.classList.contains("select-option");
-}
+  function selectOption(option: HTMLElement) {
+    const visibleOption = select?.querySelector(".select-option-visible-text");
 
-function selectOption(option: HTMLElement) {
-  const visibleOption = select?.querySelector(".select-option-visible-text");
+    if (!visibleOption) return;
 
-  if (!visibleOption) return;
+    // show the value of the selected option
+    visibleOption.textContent = option.textContent;
 
-  // show the value of the selected option
-  visibleOption.textContent = option.textContent;
+    // we want to store the "value" of the selected option as data property of the visible option
+    if (option.dataset.value)
+      visibleOption.setAttribute("data-value", option.dataset.value);
 
-  // we want to store the "value" of the selected option as data property of the visible option
-  if (option.dataset.value)
-    visibleOption.setAttribute("data-value", option.dataset.value);
-
-  hideOptions();
-}
-
-function hideOptions() {
-  select?.classList.remove("select-shown");
-}
-
-// we want our "select" element to be closed when we click outside
-window.addEventListener("click", (event: Event) => {
-  if (!(event.target as HTMLElement).closest("#select")) {
     hideOptions();
   }
-});
+
+  function hideOptions() {
+    select?.classList.remove("select-shown");
+  }
+
+  // we want our "select" element to be closed when we click outside
+  window.addEventListener("click", (event: Event) => {
+    if (!(event.target as HTMLElement).closest("#select")) {
+      hideOptions();
+    }
+  });
+}
 
 // IMAGES IN JUSTICE LEAGUE SECTION
-// some images are missing so we're using existing ones
-slideShowJusticeLeagueImages();
-
-function slideShowJusticeLeagueImages() {
+function setupJusticeLeagueImagesSlideShow() {
+  // some images are missing so we're using existing ones
   const justiceLeagueImages = [
     "/assets/illustrations/home/Bathome11.png",
     "/assets/illustrations/game/Batgame_1.png",
