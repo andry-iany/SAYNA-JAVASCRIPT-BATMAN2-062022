@@ -2,12 +2,11 @@
 
 // ANIMATION
 const eltsToAnimate = document.querySelectorAll(
-  ".slide-in-hidden, .fade-in-hidden"
+  ".slide-in-hidden, .scale-in-hidden"
 );
-console.log(Array.from(eltsToAnimate));
 
 const observer = new IntersectionObserver(handleIntersecting, {
-  threshold: 0.5,
+  threshold: 0.2,
 });
 // register observer to trigger animation when the element is visible
 eltsToAnimate.forEach((elt) => observer.observe(elt));
@@ -18,10 +17,8 @@ function handleIntersecting(entries: IntersectionObserverEntry[]) {
 
     const target = entry.target;
 
-    console.log(target.classList, isToFade(target));
-
     if (isToFade(target)) {
-      target.classList.replace("fade-in-hidden", "fade-in-shown");
+      target.classList.replace("scale-in-hidden", "scale-in-shown");
     } else if (isToSlide(target)) {
       const slideDirection = target.classList.contains("slide-in-to-left")
         ? "left"
@@ -37,7 +34,7 @@ function handleIntersecting(entries: IntersectionObserverEntry[]) {
 }
 
 function isToFade(elt: Element) {
-  return elt.classList.contains("fade-in-hidden");
+  return elt.classList.contains("scale-in-hidden");
 }
 function isToSlide(elt: Element) {
   return elt.classList.contains("slide-in-hidden");

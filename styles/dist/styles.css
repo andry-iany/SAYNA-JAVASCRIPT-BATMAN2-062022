@@ -16,9 +16,9 @@
   font-weight: 400;
   font-style: normal;
 }
-@-webkit-keyframes fade-in {
+@-webkit-keyframes scale-in {
   0% {
-    transform: scale(0.4);
+    transform: scale(0.7);
     opacity: 0;
   }
   100% {
@@ -26,14 +26,30 @@
     transform: scale(1);
   }
 }
-@keyframes fade-in {
+@keyframes scale-in {
   0% {
-    transform: scale(0.4);
+    transform: scale(0.7);
     opacity: 0;
   }
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @-webkit-keyframes slide-in-to-left {
@@ -175,15 +191,20 @@ ul {
   background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
 }
 
-.fade-in-hidden,
+.scale-in-hidden,
 .slide-in-hidden {
   color: red !important;
   opacity: 0;
 }
 
 .fade-in-shown {
-  -webkit-animation: fade-in 0.8s ease-in-out forwards;
-          animation: fade-in 0.8s ease-in-out forwards;
+  -webkit-animation: fade-in 0.4s ease-in-out forwards;
+          animation: fade-in 0.4s ease-in-out forwards;
+}
+
+.scale-in-shown {
+  -webkit-animation: scale-in 0.8s ease-in-out forwards;
+          animation: scale-in 0.8s ease-in-out forwards;
 }
 
 .slide-in-to-right-shown {
@@ -597,10 +618,6 @@ aside .icon-aside img {
     height: 4rem;
   }
 }
-.section-image-full {
-  display: block;
-  max-width: 100%;
-}
 .section-form {
   background: linear-gradient(155deg, rgba(237, 222, 191, 0.4), rgba(25, 88, 125, 0.4));
 }
@@ -755,6 +772,13 @@ aside .icon-aside img {
 }
 .carousel-content .imdb {
   color: #f8f184;
+}
+
+#section-justice-league img {
+  transition: all ease 0.5s;
+  display: block;
+  width: 100%;
+  min-height: 200px;
 }
 
 .video-wrapper {

@@ -50,3 +50,27 @@ window.addEventListener("click", (event) => {
         hideOptions();
     }
 });
+// IMAGES IN JUSTICE LEAGUE SECTION
+// some images are missing so we're using existing ones
+slideShowJusticeLeagueImages();
+function slideShowJusticeLeagueImages() {
+    const justiceLeagueImages = [
+        "/assets/illustrations/home/Bathome11.png",
+        "/assets/illustrations/game/Batgame_1.png",
+        "/assets/illustrations/game/Batgame_2.png",
+    ];
+    const justiceLeagueSection = document.querySelector("#section-justice-league");
+    if (!justiceLeagueSection)
+        return;
+    let currentImgIdx = 1;
+    const interval = setInterval(() => {
+        const img = justiceLeagueSection.querySelector("img");
+        if (!img)
+            return clearInterval(interval);
+        const nextImage = justiceLeagueImages[currentImgIdx % justiceLeagueImages.length];
+        const newImageElt = img.cloneNode(true);
+        newImageElt.setAttribute("src", nextImage);
+        img.replaceWith(newImageElt);
+        currentImgIdx++;
+    }, 3000);
+}

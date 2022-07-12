@@ -189,11 +189,6 @@
     }
   }
 
-  &-image-full {
-    display: block;
-    max-width: 100%;
-  }
-
   &-form {
     background: variables.$grad-blue-transp;
 
@@ -334,6 +329,13 @@
       color: variables.$yellow-2;
     }
   }
+}
+
+#section-justice-league img {
+  transition: all ease 0.5s;
+  display: block;
+  width: 100%;
+  min-height: 200px;
 }
 
 .video-wrapper {

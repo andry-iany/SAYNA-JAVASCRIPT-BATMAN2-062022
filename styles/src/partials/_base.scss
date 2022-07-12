@@ -98,7 +98,7 @@ ul {
   }
 }
 
-.fade-in-hidden,
+.scale-in-hidden,
 .slide-in-hidden {
   color: red !important;
   // hide the element to be animated before the animation actually occurs
@@ -107,6 +107,10 @@ ul {
 
 .fade-in-shown {
   @include mixins.animation-fade-in;
+}
+
+.scale-in-shown {
+  @include mixins.animation-scale-in;
 }
 
 .slide-in-to-right-shown {

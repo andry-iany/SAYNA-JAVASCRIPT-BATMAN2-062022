@@ -1,9 +1,8 @@
 // This module contains all shared script and some general functions
 // ANIMATION
-const eltsToAnimate = document.querySelectorAll(".slide-in-hidden, .fade-in-hidden");
-console.log(Array.from(eltsToAnimate));
+const eltsToAnimate = document.querySelectorAll(".slide-in-hidden, .scale-in-hidden");
 const observer = new IntersectionObserver(handleIntersecting, {
-    threshold: 0.5,
+    threshold: 0.2,
 });
 // register observer to trigger animation when the element is visible
 eltsToAnimate.forEach((elt) => observer.observe(elt));
@@ -12,9 +11,8 @@ function handleIntersecting(entries) {
         if (!entry.isIntersecting)
             return;
         const target = entry.target;
-        console.log(target.classList, isToFade(target));
         if (isToFade(target)) {
-            target.classList.replace("fade-in-hidden", "fade-in-shown");
+            target.classList.replace("scale-in-hidden", "scale-in-shown");
         }
         else if (isToSlide(target)) {
             const slideDirection = target.classList.contains("slide-in-to-left")
@@ -26,7 +24,7 @@ function handleIntersecting(entries) {
     });
 }
 function isToFade(elt) {
-    return elt.classList.contains("fade-in-hidden");
+    return elt.classList.contains("scale-in-hidden");
 }
 function isToSlide(elt) {
     return elt.classList.contains("slide-in-hidden");
