@@ -570,10 +570,10 @@ aside .icon-aside img {
   position: relative;
   width: 330px;
   max-width: 100%;
+  transition: all ease 0.3s;
 }
 .section-image-wrapper:hover {
   transform: scale(1.1) !important;
-  transition: all ease 5s;
 }
 .section-image-wrapper:hover .section-image-caption {
   display: block;

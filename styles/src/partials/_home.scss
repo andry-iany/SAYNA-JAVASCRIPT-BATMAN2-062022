@@ -132,11 +132,11 @@
     position: relative;
     width: 330px;
     max-width: 100%;
+    transition: all ease 0.3s;
     &:hover {
       // the element with this class is being animated in which we also manipulate "transform" property
       // so we need to make sure the value here takes precedence over that one from the animation
       transform: scale(1.1) !important;
-      transition: all ease 5s;
     }
 
     &:hover .section-image-caption {
